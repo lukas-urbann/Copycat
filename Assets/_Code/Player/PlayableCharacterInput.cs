@@ -26,6 +26,7 @@ namespace BachelorProject.Player
         {
             JumpAction = InputActions.Player.Jump;
             PauseAction = InputActions.UI.Pause;
+            InteractAction = InputActions.Player.Interact;
         }
         
         public bool GetJump => InputActions.Player.Jump.ReadValue<float>() > 0;

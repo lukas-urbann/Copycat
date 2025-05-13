@@ -38,12 +38,12 @@ namespace BachelorProject.Player
         [SerializeField] private FloatReference moveSmoothing;
 
         //Private variables
-        private float rotationX = 0f;
+        private float playerRotationX = 0f;
         private Vector3 velocity;
         private Vector3 moveDirection;
         private Vector3 actualMove = Vector3.zero;
         private Vector3 desiredMove = Vector3.zero;
-
+        private Vector2 mouseDelta;
         #endregion
 
         #region Properties
@@ -122,26 +122,23 @@ namespace BachelorProject.Player
         private void Jump(InputAction.CallbackContext ctx)
         {
             if (!enableJump) return;
-
             if (!CharacterController.isGrounded) return;
-
             velocity.y = jumpSpeed.Value;
             playerCameraAnimator.SetTrigger("Jump");
         }
 
-        private Vector2 currentMouseDelta;
         private void Look()
         {
             if (!enableLook) return;
 
-            Vector2 mouseInput = new(PlayerInput.Look.x, PlayerInput.Look.y);
-            currentMouseDelta = Vector2.Lerp(currentMouseDelta, mouseInput, 1f / lookSmoothing.Value);
+            Vector2 rawMouseInput = new(PlayerInput.Look.x, PlayerInput.Look.y);
+            mouseDelta = Vector2.Lerp(mouseDelta, rawMouseInput, 1f / lookSmoothing.Value);
 
-            rotationX -= currentMouseDelta.y * lookSpeed.Value * Time.deltaTime;
-            rotationX = Mathf.Clamp(rotationX, -lookClamp.Value, lookClamp.Value);
+            playerRotationX -= mouseDelta.y * lookSpeed.Value * Time.deltaTime;
+            playerRotationX = Mathf.Clamp(playerRotationX, -lookClamp.Value, lookClamp.Value);
 
-            playerCameraRotator.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
-            transform.Rotate(currentMouseDelta.x * lookSpeed.Value * Time.deltaTime * Vector3.up);
+            playerCameraRotator.localRotation = Quaternion.Euler(playerRotationX, 0f, 0f);
+            transform.Rotate(mouseDelta.x * lookSpeed.Value * Time.deltaTime * Vector3.up);
         }
 
         private void Move()

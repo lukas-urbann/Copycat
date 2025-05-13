@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e584c83896db0be47a83c7eebb961148, type: 3}
-  m_Name: Player Jump Speed
+  m_Name: Player Interaction Distance
   m_EditorClassIdentifier: 
-  Value: 7
+  Value: 3
