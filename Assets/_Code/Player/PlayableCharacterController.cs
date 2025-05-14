@@ -49,6 +49,7 @@ namespace BachelorProject.Player
         #region Properties
 
         [SerializeField] private Animator playerCameraAnimator;
+        [SerializeField] private Animator playerItemAnimator;
         [SerializeField] private Transform playerCameraRotator;
         [SerializeField] private PlayableCharacterInput playerInput { get; set; }
         [SerializeField] private CharacterController characterController { get; set; }
@@ -125,6 +126,7 @@ namespace BachelorProject.Player
             if (!CharacterController.isGrounded) return;
             velocity.y = jumpSpeed.Value;
             playerCameraAnimator.SetTrigger("Jump");
+            playerItemAnimator.SetTrigger("Jump");
         }
 
         private void Look()
@@ -161,6 +163,8 @@ namespace BachelorProject.Player
             // Animace
             playerCameraAnimator.SetFloat("MoveSpeed", actualMove.magnitude);
             playerCameraAnimator.SetBool("IsGrounded", CharacterController.isGrounded);
+            playerItemAnimator.SetFloat("MoveSpeed", actualMove.magnitude);
+            playerItemAnimator.SetBool("IsGrounded", CharacterController.isGrounded);
         }
     }
 }

@@ -30,7 +30,6 @@ namespace BachelorProject.Interactable
         {
             if (!isGrabbed && !isBeingLerped)
             {
-                // Find the player's hand transform and controller
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if (player != null)
                 {
