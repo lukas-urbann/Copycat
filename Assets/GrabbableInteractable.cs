@@ -5,7 +5,7 @@ using BachelorProject.Helper;
 
 namespace BachelorProject.Interactable
 {
-    public class GrabbableItem : BaseItem
+    public class GrabbableInteractable : BaseInteractable
     {
         [SerializeField] private FloatReference lerpSpeed;
         [SerializeField] private FloatReference snapDistance;
@@ -27,20 +27,20 @@ namespace BachelorProject.Interactable
         private void TryAssignComponents()
         {
             itemRigidbody = itemRigidbody != null ? itemRigidbody : Components.GetComponentInChildrenRecursively<Rigidbody>(transform);
-            itemCollider = itemCollider != null ? itemCollider : Components.FindComponentFromRoot<Collider>(transform);
-            meshRenderer = meshRenderer != null ? meshRenderer : Components.FindComponentFromRoot<MeshRenderer>(transform);
+            itemCollider = itemCollider != null ? itemCollider : Components.GetComponentInChildrenRecursively<Collider>(transform);
+            meshRenderer = meshRenderer != null ? meshRenderer : Components.GetComponentInChildrenRecursively<MeshRenderer>(transform);
         }
 
-        public override void TryConsume()
+        public override void Use()
         {
-            Debug.Log($"{transform.root.name} - Consume");
+            Debug.Log($"{transform.root.name} - Use");
         }
 
         public override void Interact()
         {
             if (IdentifiableObjectRegistry.GetObject(playerRoot) == null)
             {
-                Debug.LogWarning($"{transform.root.name}: Root hráèe není v registry, nemùžu grabnout.");
+                Debug.LogWarning($"{transform.root.name}: Root hrï¿½ï¿½e nenï¿½ v registry, nemï¿½ï¿½u grabnout.");
                 return;
             }
 
@@ -59,7 +59,7 @@ namespace BachelorProject.Interactable
 
         private IEnumerator LerpToHand()
         {
-            //Le k ruce, dokud jsi daleko
+            //Leï¿½ k ruce, dokud jsi daleko
             while (Vector3.Distance(transform.position, handTransform.position) > snapDistance.Value)
             {
                 transform.SetPositionAndRotation(

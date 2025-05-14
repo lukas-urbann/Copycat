@@ -27,4 +27,18 @@ public static class IdentifiableObjectRegistry
             return null;
         }
     }
+    
+    public static bool GetObject(ObjectIdentifier id, out GameObject go)
+    {
+        if (registry.TryGetValue(id, out var obj))
+        {
+            go = obj;
+            return true;
+        }
+        else
+        {
+            go = null;
+            return false;
+        }
+    }
 }

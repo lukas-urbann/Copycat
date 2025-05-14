@@ -14,7 +14,7 @@ namespace BachelorProject.Player
         public GameEvent ItemUseEvent;
 
         private GameObject currentHeldItem;
-        private GrabbableItem currentGrabbable;
+        private GrabbableInteractable currentGrabbable;
 
         public void HoldItem(GameObject item)
         {
@@ -27,7 +27,7 @@ namespace BachelorProject.Player
             }
 
             currentHeldItem = item;
-            currentGrabbable = item.GetComponent<GrabbableItem>();
+            currentGrabbable = item.GetComponent<GrabbableInteractable>();
 
             if (currentHeldItem != null && (heldItemOffset != Vector3.zero || heldItemRotation != Vector3.zero))
             {
@@ -49,7 +49,7 @@ namespace BachelorProject.Player
         {
             if (currentHeldItem != null && currentGrabbable != null)
             {
-                currentGrabbable.TryConsume();
+                currentGrabbable.Use();
                 ItemUseEvent?.Execute();
             }
         }

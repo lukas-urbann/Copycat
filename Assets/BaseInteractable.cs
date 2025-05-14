@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace BachelorProject.Interactable
 {
-    public abstract class BaseItem : MonoBehaviour, IInteractable
+    public abstract class BaseInteractable : MonoBehaviour, IInteractable
     {
-        protected Material originalMaterial;
+        private Material _originalMaterial;
         public MeshRenderer meshRenderer;
         [SerializeField] protected bool allowInteractions = true;
         [SerializeField] protected StringVariable interactionVariable;
@@ -18,7 +18,7 @@ namespace BachelorProject.Interactable
         {
             if (meshRenderer != null && highlightMaterial != null)
             {
-                originalMaterial = meshRenderer.material;
+                _originalMaterial = meshRenderer.material;
             }
         }
 
@@ -28,13 +28,14 @@ namespace BachelorProject.Interactable
 
             if (meshRenderer != null && highlightMaterial != null)
             {
-                meshRenderer.material = val ? meshRenderer.material : originalMaterial;
+                meshRenderer.material = val ? meshRenderer.material : _originalMaterial;
             }
         }
 
         public abstract void Interact();
 
-        public abstract void TryConsume();
+        //Alternativní metoda pro použití předmětu.
+        public abstract void Use();
 
         public virtual void OnSee()
         {
@@ -58,9 +59,9 @@ namespace BachelorProject.Interactable
                 label.ClearInteractionText();
             }
 
-            if (meshRenderer != null && originalMaterial != null)
+            if (meshRenderer != null && _originalMaterial != null)
             {
-                meshRenderer.material = originalMaterial;
+                meshRenderer.material = _originalMaterial;
             }
         }
     }
