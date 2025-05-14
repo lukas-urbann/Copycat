@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.OnScreen;
 
 namespace BachelorProject.Player
 {
@@ -15,6 +16,8 @@ namespace BachelorProject.Player
         [Header("Events")]
         public GameEvent InteractEvent;
         public GameEvent DropEvent;
+        public GameEvent SeeInteractable;
+        public GameEvent UnseeInteractable;
 
         #region Privátní promìnné
 
@@ -60,10 +63,16 @@ namespace BachelorProject.Player
                     if (currentInteractable != interactable) // Pokud hráè vidí jiný interaktovatelný objekt
                     {
                         currentInteractable?.OnUnsee(); // Pokud hráè pøejel na nový objekt, tak odvolat ten starý
+                        if (interactableInReach) // Pokud jsme mìli pøedtím nìjaký interactable
+                        {
+                            UnseeInteractable.Execute();
+                        }
+
                         currentInteractable = interactable; // Pøesunutí na nový interactable
                         currentInteractable?.OnSee();
                         interactableInReach = true;
                         interactionPrompt?.SetActive(true);
+                        SeeInteractable.Execute();
                     }
                     return;
                 }
@@ -75,6 +84,7 @@ namespace BachelorProject.Player
                 currentInteractable = null;
                 interactableInReach = false;
                 interactionPrompt?.SetActive(false);
+                UnseeInteractable.Execute();
             }
         }
 

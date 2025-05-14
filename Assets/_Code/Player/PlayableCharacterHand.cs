@@ -8,6 +8,11 @@ namespace BachelorProject.Player
         [SerializeField] private Vector3 heldItemOffset = Vector3.zero;
         [SerializeField] private Vector3 heldItemRotation = Vector3.zero;
 
+        [Header("Events")]
+        public GameEvent ItemGrabEvent;
+        public GameEvent ItemDropEvent;
+        public GameEvent ItemUseEvent;
+
         private GameObject currentHeldItem;
         private GrabbableItem currentGrabbable;
 
@@ -29,12 +34,15 @@ namespace BachelorProject.Player
                 Transform itemTransform = currentHeldItem.transform;
                 itemTransform.SetLocalPositionAndRotation(heldItemOffset, Quaternion.Euler(heldItemRotation));
             }
+
+            ItemGrabEvent?.Execute();
         }
 
         public void ReleaseItem()
         {
             currentHeldItem = null;
             currentGrabbable = null;
+            ItemDropEvent?.Execute();
         }
 
         public void UseItem()
@@ -42,6 +50,7 @@ namespace BachelorProject.Player
             if (currentHeldItem != null && currentGrabbable != null)
             {
                 currentGrabbable.TryConsume();
+                ItemUseEvent?.Execute();
             }
         }
     }

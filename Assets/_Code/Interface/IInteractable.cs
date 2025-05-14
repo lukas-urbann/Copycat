@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace BachelorProject
 {
     public interface IInteractable
