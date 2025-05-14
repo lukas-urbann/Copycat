@@ -25,9 +25,9 @@ namespace BachelorProject.Interactable
 
         private void TryAssignComponents()
         {
-            itemRigidbody ??= Components.FindComponentFromRoot<Rigidbody>(transform);
-            itemCollider ??= Components.FindComponentFromRoot<Collider>(transform);
-            meshRenderer ??= Components.FindComponentFromRoot<MeshRenderer>(transform);
+            itemRigidbody = itemRigidbody != null ? itemRigidbody : Components.GetComponentInChildrenRecursively<Rigidbody>(transform);
+            itemCollider = itemCollider != null ? itemCollider : Components.FindComponentFromRoot<Collider>(transform);
+            meshRenderer = meshRenderer != null ? meshRenderer : Components.FindComponentFromRoot<MeshRenderer>(transform);
         }
 
         public override void TryConsume()

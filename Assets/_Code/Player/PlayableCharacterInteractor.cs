@@ -63,11 +63,7 @@ namespace BachelorProject.Player
                     if (currentInteractable != interactable) // Pokud hráè vidí jiný interaktovatelný objekt
                     {
                         currentInteractable?.OnUnsee(); // Pokud hráè pøejel na nový objekt, tak odvolat ten starý
-                        if (interactableInReach) // Pokud jsme mìli pøedtím nìjaký interactable
-                        {
-                            UnseeInteractable.Execute();
-                        }
-
+                        if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme mìli pøedtím nìjaký interactable
                         currentInteractable = interactable; // Pøesunutí na nový interactable
                         currentInteractable?.OnSee();
                         interactableInReach = true;
