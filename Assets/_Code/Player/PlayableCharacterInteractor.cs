@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.OnScreen;
 
 namespace BachelorProject.Player
 {
@@ -64,11 +63,15 @@ namespace BachelorProject.Player
                     {
                         currentInteractable?.OnUnsee(); // Pokud hráè pøejel na nový objekt, tak odvolat ten starý
                         if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme mìli pøedtím nìjaký interactable
-                        currentInteractable = interactable; // Pøesunutí na nový interactable
-                        currentInteractable?.OnSee();
-                        interactableInReach = true;
-                        interactionPrompt?.SetActive(true);
-                        SeeInteractable.Execute();
+
+                        if (interactable.IsInteractable)
+                        {
+                            currentInteractable = interactable; // Pøesunutí na nový interactable
+                            currentInteractable?.OnSee();
+                            interactableInReach = true;
+                            interactionPrompt?.SetActive(true);
+                            SeeInteractable.Execute();
+                        }
                     }
                     return;
                 }

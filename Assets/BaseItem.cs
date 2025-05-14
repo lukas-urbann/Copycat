@@ -12,11 +12,23 @@ namespace BachelorProject.Interactable
         [SerializeField] protected Material highlightMaterial;
         [SerializeField] protected ObjectIdentifier interactionLabel;
 
+        public bool IsInteractable { get => allowInteractions; }
+
         private void Start()
         {
             if (meshRenderer != null && highlightMaterial != null)
             {
                 originalMaterial = meshRenderer.material;
+            }
+        }
+
+        public void ToggleInteractability(bool val)
+        {
+            allowInteractions = val;
+
+            if (meshRenderer != null && highlightMaterial != null)
+            {
+                meshRenderer.material = val ? meshRenderer.material : originalMaterial;
             }
         }
 

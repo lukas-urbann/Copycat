@@ -13,6 +13,7 @@ namespace BachelorProject.Interactable
 
         private bool isGrabbed = false;
         private bool isBeingLerped = false;
+        private UnityEngine.Rendering.ShadowCastingMode originalShadowMode;
 
         public Transform handTransform;
         public Rigidbody itemRigidbody;
@@ -80,6 +81,12 @@ namespace BachelorProject.Interactable
                 itemCollider.enabled = false;
             }
 
+            if (meshRenderer != null)
+            {
+                originalShadowMode = meshRenderer.shadowCastingMode;
+                meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            }
+
             IdentifiableObjectRegistry.GetObject(playerRoot).GetComponent<PlayableCharacterHand>().HoldItem(gameObject);
         }
 
@@ -99,6 +106,11 @@ namespace BachelorProject.Interactable
             if (itemCollider != null)
             {
                 itemCollider.enabled = true;
+            }
+
+            if (meshRenderer != null)
+            {
+                meshRenderer.shadowCastingMode = originalShadowMode;
             }
 
             IdentifiableObjectRegistry.GetObject(playerRoot).GetComponent<PlayableCharacterHand>().ReleaseItem();
