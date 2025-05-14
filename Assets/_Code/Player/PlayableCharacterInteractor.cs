@@ -7,29 +7,22 @@ namespace BachelorProject.Player
     public class PlayableCharacterInteractor : MonoBehaviour
     {
         [SerializeField] private FloatReference interactionDistance;
-        [SerializeField] private GameObject interactionPrompt;
-
         [Tooltip("Která maska se považuje za interaktovatelnou")]
         [SerializeField] private LayerMask interactableLayer = ~0; // Výchozí na 0, aby bylo zahrnuto vše
-        [SerializeField] private PlayableCharacterInput playerInput { get; set; }
+        [SerializeField] private GameObject interactionPrompt;
+        [SerializeField] private Camera interactionCamera;
 
-        public Camera interactionCamera;
+        [Header("Events")]
+        public GameEvent InteractEvent;
+        public GameEvent DropEvent;
+
+        #region Privátní promìnné
 
         private IInteractable currentInteractable;
-        private bool isLookingAtInteractable = false;
+        private bool interactableInReach = false;
+        [SerializeField] private PlayableCharacterInput playerInput { get; set; }
 
-        private void Awake()
-        {
-            if (interactionCamera == null)
-            {
-                Debug.LogError("PlayableCharacterInteractor requires a Camera component on this object or a child object!");
-            }
-
-            if (interactionPrompt != null)
-            {
-                interactionPrompt.SetActive(false);
-            }
-        }
+        #endregion
 
         private void Start()
         {
@@ -39,10 +32,16 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError("Hráè nemá input!");
+                Debug.LogError($"{typeof(PlayableCharacterInteractor)} nemá input!");
             }
 
-            playerInput.InteractAction.performed += HandleInteraction;
+            AssignActions();
+        }
+
+        private void AssignActions()
+        {
+            playerInput.InteractAction.performed += PlayerInteraction;
+            playerInput.DropAction.performed += PlayerDrop;
         }
 
         private void Update()
@@ -53,67 +52,45 @@ namespace BachelorProject.Player
         private void CheckForInteractable()
         {
             Ray ray = new(interactionCamera.transform.position, interactionCamera.transform.forward);
-            RaycastHit hit;
 
-            // Cast a ray forward to detect interactable objects
-            if (Physics.Raycast(ray, out hit, interactionDistance.Value, interactableLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance.Value, interactableLayer))
             {
-                // Try to get an IInteractable component from the hit object
                 if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
                 {
-                    // If we're looking at a new interactable
-                    if (currentInteractable != interactable)
+                    if (currentInteractable != interactable) // Pokud hráè vidí jiný interaktovatelný objekt
                     {
-                        // If we were looking at a previous interactable, call OnUnsee
-                        if (currentInteractable != null)
-                        {
-                            currentInteractable.OnUnsee();
-                        }
-
-                        // Update current interactable and call OnSee
-                        currentInteractable = interactable;
-                        currentInteractable.OnSee();
-                        isLookingAtInteractable = true;
-
-                        // Show interaction prompt if assigned
-                        if (interactionPrompt != null)
-                        {
-                            interactionPrompt.SetActive(true);
-                        }
+                        currentInteractable?.OnUnsee(); // Pokud hráè pøejel na nový objekt, tak odvolat ten starý
+                        currentInteractable = interactable; // Pøesunutí na nový interactable
+                        currentInteractable?.OnSee();
+                        interactableInReach = true;
+                        interactionPrompt?.SetActive(true);
                     }
-
                     return;
                 }
             }
 
-            // If we reach here, we're not looking at an interactable
-            if (isLookingAtInteractable)
+            if (interactableInReach) // Pokud jsme se od interaktovatelného objektu vzdálili
             {
-                // Call OnUnsee for previous interactable
-                if (currentInteractable != null)
-                {
-                    currentInteractable.OnUnsee();
-                }
-
+                currentInteractable?.OnUnsee();
                 currentInteractable = null;
-                isLookingAtInteractable = false;
-
-                // Hide interaction prompt if assigned
-                if (interactionPrompt != null)
-                {
-                    interactionPrompt.SetActive(false);
-                }
+                interactableInReach = false;
+                interactionPrompt?.SetActive(false);
             }
         }
 
-        private void HandleInteraction(InputAction.CallbackContext ctx)
+        public void PlayerInteraction(InputAction.CallbackContext ctx)
         {
-            if (!isLookingAtInteractable) return;
-            currentInteractable?.Interact();
+            InteractEvent.Execute();
         }
 
-        public void ForceInteraction()
+        public void PlayerDrop(InputAction.CallbackContext ctx)
         {
+            DropEvent.Execute();
+        }
+
+        public void HandleInteraction()
+        {
+            if (!interactableInReach) return;
             currentInteractable?.Interact();
         }
     }

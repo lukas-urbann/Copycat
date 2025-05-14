@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e584c83896db0be47a83c7eebb961148, type: 3}
-  m_Name: Player Look Smoothing Speed
+  m_Script: {fileID: 11500000, guid: 462cb94e20fa3ce4e8fa552989161f2f, type: 3}
+  m_Name: Player Root Identifier
   m_EditorClassIdentifier: 
-  Value: 8

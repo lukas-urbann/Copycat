@@ -9,6 +9,7 @@ namespace BachelorProject.Player
         public InputAction JumpAction { get; private set; }
         public InputAction InteractAction { get; private set; }
         public InputAction PauseAction { get; private set; }
+        public InputAction DropAction { get; private set; }
         public Vector2 Movement => InputActions.Player.Move.ReadValue<Vector2>();
         public Vector2 Look => InputActions.Player.Look.ReadValue<Vector2>();
 
@@ -27,6 +28,7 @@ namespace BachelorProject.Player
             JumpAction = InputActions.Player.Jump;
             PauseAction = InputActions.UI.Pause;
             InteractAction = InputActions.Player.Interact;
+            DropAction = InputActions.Player.Drop;
         }
         
         public bool GetJump => InputActions.Player.Jump.ReadValue<float>() > 0;
