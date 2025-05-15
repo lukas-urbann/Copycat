@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class CollisionInteractable : MonoBehaviour
+namespace BachelorProject.Interactable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class CollisionInteractable : BaseInteractable
     {
-        
-    }
+        public override void Interact()
+        {
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Use()
+        {
+        }
     }
 }
