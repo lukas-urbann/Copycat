@@ -12,6 +12,11 @@ namespace BachelorProject.UI
             interactionText.text = str.Value;
         }
 
+        public void SetInteractionText(string str)
+        {
+            interactionText.text = str;
+        }
+
         public void ClearInteractionText()
         {
             interactionText.text = string.Empty;

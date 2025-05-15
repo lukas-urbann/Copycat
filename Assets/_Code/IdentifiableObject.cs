@@ -10,7 +10,7 @@ public class IdentifiableObject : MonoBehaviour
     {
         if (identifier != null)
         {
-            IdentifiableObjectRegistry.Register(identifier, this.gameObject);
+            ObjectRegistry.Register(identifier, this.gameObject);
         }
     }
 
@@ -18,7 +18,7 @@ public class IdentifiableObject : MonoBehaviour
     {
         if (identifier != null)
         {
-            IdentifiableObjectRegistry.Unregister(identifier);
+            ObjectRegistry.Unregister(identifier);
         }
     }
 }

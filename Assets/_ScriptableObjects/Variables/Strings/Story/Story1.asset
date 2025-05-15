@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
+  m_Name: Story1
+  m_EditorClassIdentifier: 
+  Value: And there he was, alone and abandoned. He was not there by mistake, but
+    he did not know the reason why. Of flesh and blood, or zeros and ones, his integrity
+    was known.

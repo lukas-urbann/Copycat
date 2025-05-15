@@ -1,3 +1,4 @@
+using BachelorProject.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

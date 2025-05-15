@@ -1,3 +1,4 @@
+using BachelorProject.Events;
 using BachelorProject.Interactable;
 using UnityEngine;
 
@@ -15,6 +16,12 @@ namespace BachelorProject.Player
 
         private GameObject currentHeldItem;
         private GrabbableInteractable currentGrabbable;
+        private bool isUsingItem = true;
+
+        public void ToggleHandItemUse(bool val)
+        {
+            isUsingItem = val;
+        }
 
         public void HoldItem(GameObject item)
         {
@@ -47,7 +54,7 @@ namespace BachelorProject.Player
 
         public void UseItem()
         {
-            if (currentHeldItem != null && currentGrabbable != null)
+            if (currentHeldItem != null && currentGrabbable != null && isUsingItem)
             {
                 currentGrabbable.Use();
                 ItemUseEvent?.Execute();
