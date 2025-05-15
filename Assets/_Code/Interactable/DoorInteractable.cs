@@ -1,3 +1,4 @@
+using BachelorProject.Management;
 using BachelorProject.UI;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,7 +31,7 @@ namespace BachelorProject.Interactable
             {
                 if (!TryGetComponent(out doorAnimator))
                 {
-                    Debug.Log("Dveøe nemají animator");
+                    Debug.Log("Dveï¿½e nemajï¿½ animator");
                 }
             }
 

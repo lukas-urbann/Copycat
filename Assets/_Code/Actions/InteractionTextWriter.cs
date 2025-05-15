@@ -1,5 +1,6 @@
 using BachelorProject.UI;
 using System.Collections.Generic;
+using BachelorProject.Management;
 using UnityEngine;
 
 namespace BachelorProject.Actions
@@ -13,7 +14,7 @@ namespace BachelorProject.Actions
         {
             if (interactionLabel == null)
             {
-                Debug.LogWarning($"{transform.root.name} nemá Interaction Label");
+                Debug.LogWarning($"{transform.root.name} nemï¿½ Interaction Label");
                 return;
             }
         }
@@ -30,12 +31,12 @@ namespace BachelorProject.Actions
                     }
                     else
                     {
-                        Debug.LogWarning($"{transform.root.name} - Žádný text k dispozici");
+                        Debug.LogWarning($"{transform.root.name} - ï¿½ï¿½dnï¿½ text k dispozici");
                     }
                 }
                 else
                 {
-                    Debug.LogWarning($"{transform.root.name} - Interaction Label nemá InteractionText");
+                    Debug.LogWarning($"{transform.root.name} - Interaction Label nemï¿½ InteractionText");
                 }
             }
             else
