@@ -79,9 +79,14 @@ namespace BachelorProject.Interactable
             Use();
         }
 
-        private void ToggleDoorState()
+        public void ToggleDoorState()
         {
             doorAnimator.SetBool("isOpen", isOpen = !isOpen);
+        }
+
+        public void ToggleDoorState(bool val)
+        {
+            doorAnimator.SetBool("isOpen", isOpen = val);
         }
     }
 }
