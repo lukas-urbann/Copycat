@@ -16,6 +16,7 @@ namespace BachelorProject.Interactable
         [SerializeField] protected StringVariable wrongKeyString;
         [SerializeField] protected StringVariable doorUnlockedString;
         [SerializeField] private Animator doorAnimator;
+        [SerializeField] private UnityEvent<bool> onDoorOpenEvent = new();
 
         private void OnEnable()
         {
@@ -77,6 +78,7 @@ namespace BachelorProject.Interactable
         private void ToggleOpen()
         {
             Use();
+            onDoorOpenEvent?.Invoke(isOpen);
         }
 
         public void ToggleDoorState()
