@@ -3,13 +3,13 @@ using UnityEngine;
 
 namespace BachelorProject.Events
 {
-    public class ParameterEvent : GameEvent
+    public class ParameterEvent<T> : GameEvent
     {
-        private List<ParameterEventListener> _listeners = new();
+        private List<ParameterEventListener<T>> _listeners = new();
         
         public override void RegisterListener(GameEventListener listener)
         {
-            if (listener is ParameterEventListener parameterListener && !_listeners.Contains(parameterListener))
+            if (listener is ParameterEventListener<T> parameterListener && !_listeners.Contains(parameterListener))
             {
                 _listeners.Add(parameterListener);
             }
@@ -17,7 +17,7 @@ namespace BachelorProject.Events
 
         public override void UnregisterListener(GameEventListener listener)
         {
-            if (listener is ParameterEventListener parameterListener)
+            if (listener is ParameterEventListener<T> parameterListener)
             {
                 _listeners.Remove(parameterListener);
             }
@@ -27,8 +27,10 @@ namespace BachelorProject.Events
         {
             if (parameter == null)
             {
-                Debug.Log($"Parameter předaný do {typeof(ParameterEvent)} je null!");
+                Debug.Log($"Parameter předaný do {typeof(ParameterEvent<T>)} je null!");
             }
+            
+            Debug.Log($"Vyvolání eventu typu {typeof(ParameterEvent<T>)} s parametrem: {parameter}");
             
             for (int i = _listeners.Count - 1; i >= 0; i--)
             {

@@ -63,17 +63,19 @@ namespace BachelorProject.Player
         public void PauseGame()
         {
             isPaused.Variable.Value = true;
-            onPauseEvent?.Execute(isPaused.Value);
-            Time.timeScale = 0;
+            onPauseEvent?.Execute();
             Helper.CursorStates.UnlockCursor();
             menuScreen.GetSourceObject()?.SetActive(true);
+            
+            Time.timeScale = 0;
         }
 
         public void UnpauseGame()
         {
-            isPaused.Variable.Value = false;
-            onPauseEvent?.Execute(isPaused.Value);
             Time.timeScale = 1;
+
+            isPaused.Variable.Value = false;
+            onPauseEvent?.Execute();
             Helper.CursorStates.LockCursor();
             menuScreen.GetSourceObject()?.SetActive(false);
         }

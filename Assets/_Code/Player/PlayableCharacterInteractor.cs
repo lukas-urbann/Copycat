@@ -90,6 +90,11 @@ namespace BachelorProject.Player
             }
         }
 
+        public void SetInteractivity(bool gamePaused)
+        {
+            canInteract = !gamePaused;
+        }
+
         public void PlayerInteraction(InputAction.CallbackContext ctx)
         {
             InteractEvent.Execute();

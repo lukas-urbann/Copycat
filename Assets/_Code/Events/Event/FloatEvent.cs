@@ -3,7 +3,7 @@ using UnityEngine;
 namespace BachelorProject.Events
 {
     [CreateAssetMenu(menuName = "Events/Float Event")]
-    public class FloatEvent : ParameterEvent
+    public class FloatEvent : ParameterEvent<float>
     {
         [SerializeField] private FloatReference floatReference;
         

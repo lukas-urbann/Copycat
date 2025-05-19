@@ -3,7 +3,7 @@ using UnityEngine;
 namespace BachelorProject.Events
 {
     [CreateAssetMenu(menuName = "Events/Bool Event")]
-    public class BoolEvent : ParameterEvent
+    public class BoolEvent : ParameterEvent<bool>
     {
         [SerializeField] private BoolReference boolReference;
         

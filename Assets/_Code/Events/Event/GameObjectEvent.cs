@@ -3,7 +3,7 @@ using UnityEngine;
 namespace BachelorProject.Events
 {
     [CreateAssetMenu(menuName = "Events/GameObject Event")]
-    public class GameObjectEvent : ParameterEvent
+    public class GameObjectEvent : ParameterEvent<GameObject>
     {
         [SerializeField] private ObjectIdentifier objectIdentifier;
         

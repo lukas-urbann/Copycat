@@ -184,6 +184,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
+--- !u!1 &335690702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2939635296200067425, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
+  m_PrefabInstance: {fileID: 1146290341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &335690708 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7363257625963567250, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
+  m_PrefabInstance: {fileID: 1146290341}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335690702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ea0507b0571cc49902f6068eedee7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &335690715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335690702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d774910e1c4d2441e955b9d54488c43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 335690708}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterInteractor,
+          Assembly-CSharp
+        m_MethodName: SetInteractivity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &823110901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,7 +563,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2939635296200067425, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 335690715}
   m_SourcePrefab: {fileID: 100100000, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
 --- !u!1001 &1222277891
 PrefabInstance:
@@ -588,6 +636,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68fc4d89569c4c3caf3c73a20cfbcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1252579863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8943584047583507935, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+  m_PrefabInstance: {fileID: 1958962358}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1252579867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1370172201955016362, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+  m_PrefabInstance: {fileID: 1958962358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252579863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c668985a15e85a3449e9468cc03458af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1252579871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252579863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d774910e1c4d2441e955b9d54488c43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1252579867}
+        m_TargetAssemblyTypeName: BachelorProject.Interactable.GrabbableInteractable,
+          Assembly-CSharp
+        m_MethodName: ToggleGamePause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1350257442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1027,7 +1120,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8943584047583507935, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1252579871}
   m_SourcePrefab: {fileID: 100100000, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

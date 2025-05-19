@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BachelorProject.Events
 {
     [CreateAssetMenu(menuName = "Events/String Event")]
-    public class StringEvent : ParameterEvent
+    public class StringEvent : ParameterEvent<string>
     {
         [SerializeField] private StringReference stringReference;
         
