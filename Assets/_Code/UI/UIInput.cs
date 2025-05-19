@@ -10,7 +10,6 @@ namespace BachelorProject.Player
         private InputAction PauseAction { get; set; }
         
         public BoolReference isPaused;
-        public ObjectIdentifier menuScreen;
         public BoolEvent onPauseEvent;
         
         private void Awake()
@@ -66,7 +65,6 @@ namespace BachelorProject.Player
             Time.timeScale = 1;
             isPaused.Variable.Value = false;
             Helper.CursorStates.UnlockCursor();
-            menuScreen.GetSourceObject()?.SetActive(true);
         }
         
         public void PauseGame()
@@ -74,7 +72,6 @@ namespace BachelorProject.Player
             isPaused.Variable.Value = true;
             onPauseEvent?.Execute();
             Helper.CursorStates.UnlockCursor();
-            menuScreen.GetSourceObject()?.SetActive(true);
             
             Time.timeScale = 0;
         }
@@ -86,7 +83,6 @@ namespace BachelorProject.Player
             isPaused.Variable.Value = false;
             onPauseEvent?.Execute();
             Helper.CursorStates.LockCursor();
-            menuScreen.GetSourceObject()?.SetActive(false);
         }
     }
 }

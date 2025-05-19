@@ -4128,7 +4128,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2475379712245995556, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 913283076}
   m_SourcePrefab: {fileID: 100100000, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
 --- !u!1 &878853589
 GameObject:
@@ -6231,6 +6234,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8326790875832987699, guid: afb3dab2c90391d4c989eaf1fb4bc052, type: 3}
   m_PrefabInstance: {fileID: 883692109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &913283067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2475379712245995556, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
+  m_PrefabInstance: {fileID: 874399485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &913283076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913283067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d774910e1c4d2441e955b9d54488c43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1117445981}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1098468517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6304,6 +6340,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 233065846496763978, guid: 631ad739e1140b34fbf864c85e0dac11, type: 3}
   m_PrefabInstance: {fileID: 1098468517}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1117445981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 582270548938270651, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
+  m_PrefabInstance: {fileID: 874399485}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1136453347
 Mesh:

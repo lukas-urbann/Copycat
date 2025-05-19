@@ -34,9 +34,9 @@ namespace BachelorProject.Scenes
             
             var asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
-            while (asyncLoad is { isDone: false })
+            while (!asyncLoad.isDone)
             {
-                yield return new WaitForSeconds(1);
+                yield return null;
             }
             
             SceneCheck();
