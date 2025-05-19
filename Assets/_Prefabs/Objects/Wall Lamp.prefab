@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3419368288592884506}
   m_Layer: 0
-  m_Name: Lamp_Wall
+  m_Name: Wall Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

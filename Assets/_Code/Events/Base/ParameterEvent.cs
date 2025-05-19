@@ -30,7 +30,7 @@ namespace BachelorProject.Events
                 Debug.Log($"Parameter předaný do {typeof(ParameterEvent<T>)} je null!");
             }
             
-            Debug.Log($"{GetType().Name} - Vyvolání eventu s parametrem typu {typeof(T)} s parametrem: {parameter}");
+            Debug.Log($"{GetType().Name} - Vyvolání eventu s parametrem: {parameter}");
             
             for (int i = _listeners.Count - 1; i >= 0; i--)
             {
