@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class AudioCall : MonoBehaviour
+namespace BachelorProject.Audio
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class AudioCall : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
