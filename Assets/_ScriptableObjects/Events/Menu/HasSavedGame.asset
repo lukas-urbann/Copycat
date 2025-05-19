@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556cd8c890c8b4203b1a497984147003, type: 3}
   m_Name: HasSavedGame
   m_EditorClassIdentifier: 
+  executeWhenFalse: 0
   boolReference:
     UseConstant: 0
     ConstantValue: 0
