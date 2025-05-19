@@ -5,10 +5,9 @@ namespace BachelorProject.Player
 {
     public class PlayableCharacterInput : MonoBehaviour
     {
-        public GameControls InputActions { get; private set; }
+        private GameControls InputActions { get; set; }
         public InputAction JumpAction { get; private set; }
         public InputAction InteractAction { get; private set; }
-        public InputAction PauseAction { get; private set; }
         public InputAction DropAction { get; private set; }
         public Vector2 Movement => InputActions.Player.Move.ReadValue<Vector2>();
         public Vector2 Look => InputActions.Player.Look.ReadValue<Vector2>();
@@ -26,7 +25,6 @@ namespace BachelorProject.Player
         private void AssignActions()
         {
             JumpAction = InputActions.Player.Jump;
-            PauseAction = InputActions.UI.Pause;
             InteractAction = InputActions.Player.Interact;
             DropAction = InputActions.Player.Drop;
         }

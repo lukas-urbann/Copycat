@@ -32,7 +32,6 @@ namespace BachelorProject.Interactable
 
         public void ToggleLever()
         {
-            Debug.Log("Toggling lever");
             Use();
         }
 

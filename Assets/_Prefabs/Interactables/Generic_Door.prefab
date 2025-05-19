@@ -183,8 +183,8 @@ MonoBehaviour:
   interactionLabel: {fileID: 11400000, guid: ee3a260928816874d803682035c21442, type: 2}
   eventOnInteract: {fileID: 0}
   eventOnUse: {fileID: 0}
-  isLocked: 1
-  isOpen: 0
+  isLocked: 0
+  isOpen: 1
   doorKeyID:
     UseConstant: 1
     ConstantValue: UNKNOWN
@@ -194,6 +194,9 @@ MonoBehaviour:
   wrongKeyString: {fileID: 11400000, guid: fb571e8bff5ca914483c5cff3f1ba636, type: 2}
   doorUnlockedString: {fileID: 11400000, guid: 5b7d92940f714e649b095136e63f9b6f, type: 2}
   doorAnimator: {fileID: 806192036684591415}
+  onDoorOpenEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &6019153140861874697
 BoxCollider:
   m_ObjectHideFlags: 0

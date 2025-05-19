@@ -126,6 +126,9 @@ GameObject:
   - component: {fileID: 7363257625963567250}
   - component: {fileID: 6511955727238000314}
   - component: {fileID: 8213714695983666522}
+  - component: {fileID: 2924750639909210495}
+  - component: {fileID: 167703061533784521}
+  - component: {fileID: 6635741567568031808}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -341,6 +344,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifier: {fileID: 11400000, guid: c813dce3f0f319441b20d0eaea8fd6d1, type: 2}
+--- !u!114 &2924750639909210495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939635296200067425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1d9ad6fc6614ad08bf59e725a033f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5e20ba500466a47b49143c33f8380816, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7363257625963567250}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterInteractor,
+          Assembly-CSharp
+        m_MethodName: HandleInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6511955727238000314}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterHand, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &167703061533784521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939635296200067425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1d9ad6fc6614ad08bf59e725a033f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ea2205f131a5d41af9e7d4c72855e5d4, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6511955727238000314}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterHand, Assembly-CSharp
+        m_MethodName: ToggleHandItemUse
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6635741567568031808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939635296200067425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1d9ad6fc6614ad08bf59e725a033f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 04ec94da7562d4fb8a999a4092adadae, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6511955727238000314}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterHand, Assembly-CSharp
+        m_MethodName: ToggleHandItemUse
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &4810329794948074931
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +780,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.18289427, g: 0.21977086, b: 0.2830189, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -709,7 +809,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: d5f1373537ad2dd489bef828af5aa816, type: 2}
   m_TargetDisplay: 0

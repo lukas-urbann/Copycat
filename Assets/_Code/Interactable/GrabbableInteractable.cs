@@ -34,7 +34,7 @@ namespace BachelorProject.Interactable
 
         public override void Use()
         {
-            Debug.Log($"{transform.root.name} - Use");
+            Debug.Log($"{gameObject.name} - Use");
         }
 
         public override void Interact()

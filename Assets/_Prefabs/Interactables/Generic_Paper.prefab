@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1805718780767967539}
   - component: {fileID: 2888823568166292824}
   m_Layer: 3
-  m_Name: StoryPaper
+  m_Name: Generic_Paper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

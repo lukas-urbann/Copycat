@@ -71,7 +71,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError("Hráè nemá input!");
+                Debug.LogError("Hrï¿½ï¿½ nemï¿½ input!");
             }
 
             if (TryGetComponent(out CharacterController controller))
@@ -80,7 +80,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError($"Hráè nemá {typeof(CharacterController)}!");
+                Debug.LogError($"Hrï¿½ï¿½ nemï¿½ {typeof(CharacterController)}!");
             }
 
             GetControls();
@@ -95,7 +95,7 @@ namespace BachelorProject.Player
 
         private void GetControls()
         {
-            if (playerInput == null)
+            if (!playerInput)
             {
                 Debug.LogError("PlayerInput component is null. Cannot bind input actions.");
                 return;
@@ -108,15 +108,6 @@ namespace BachelorProject.Player
             else
             {
                 Debug.LogWarning("Jump action is null. Jump functionality will not work.");
-            }
-
-            if (playerInput.PauseAction != null)
-            {
-                playerInput.PauseAction.performed += (InputAction.CallbackContext ctx) => { Helper.CursorStates.UnlockCursor(); };
-            }
-            else
-            {
-                Debug.LogWarning("Pause action is null. Pause functionality will not work.");
             }
         }
 

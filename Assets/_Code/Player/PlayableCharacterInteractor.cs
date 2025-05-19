@@ -7,6 +7,8 @@ namespace BachelorProject.Player
     [RequireComponent(typeof(PlayableCharacterInput))]
     public class PlayableCharacterInteractor : MonoBehaviour
     {
+        private bool canInteract = true;
+        
         [SerializeField] private FloatReference interactionDistance;
         [Tooltip("Která maska se považuje za interaktovatelnou")]
         [SerializeField] private LayerMask interactableLayer = ~0; // Výchozí na 0, aby bylo zahrnuto vše
@@ -100,6 +102,7 @@ namespace BachelorProject.Player
 
         public void HandleInteraction()
         {
+            if (!canInteract) return;
             if (!interactableInReach) return;
             currentInteractable?.Interact();
         }

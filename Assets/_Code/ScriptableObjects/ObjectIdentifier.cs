@@ -11,11 +11,22 @@ public class ObjectIdentifier : ScriptableObject
 
     public T GetSourceComponent<T>()
     {
-        if (GetSourceObject().TryGetComponent(out T comp))
+        var sourceObject = GetSourceObject();
+        return sourceObject && sourceObject.TryGetComponent(out T comp) ? comp : default(T);
+    }
+    
+    public bool GetSourceComponent<T>(out T comp)
+    {
+        var sourceObject = GetSourceObject();
+        
+        if (!sourceObject)
         {
-            return comp;
+            Debug.LogError("ObjectIdentifier: Source object je null");
+            comp = default(T);
+            return false;
         }
-
-        return default(T);
+        
+        comp = sourceObject.TryGetComponent(out T c) ? c : default(T);
+        return true;
     }
 }

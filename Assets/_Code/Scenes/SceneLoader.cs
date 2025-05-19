@@ -16,14 +16,7 @@ namespace BachelorProject.Scenes
         
         private IEnumerator LoadScene(string sceneName)
         {
-            if (ObjectRegistry.GetObject(loadingSceneIdentifier, out var load))
-            {
-                load.SetActive(true);
-            }
-            else
-            {
-                Debug.LogError("Loading screen není v registry");
-            }
+            loadingSceneIdentifier.GetSourceComponent<CanvasGroup>().alpha = 1;
             
             var asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
@@ -32,7 +25,7 @@ namespace BachelorProject.Scenes
                 yield return null;
             }
             
-            load.SetActive(false);
+            loadingSceneIdentifier.GetSourceComponent<CanvasGroup>().alpha = 0;
         }
     }
 }

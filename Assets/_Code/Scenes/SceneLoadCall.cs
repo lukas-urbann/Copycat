@@ -8,7 +8,16 @@ namespace BachelorProject.Scenes
 
         public void LoadScene(StringVariable sceneName)
         {
-            gameSystems.GetSourceComponent<SceneLoader>().LoadSceneCall(sceneName);
+            if (!sceneName)
+            {
+                Debug.LogError("SceneLoadCall: Scene je null");
+                return;
+            }
+            
+            if (gameSystems.GetSourceComponent(out SceneLoader sc))
+            {
+                sc.LoadSceneCall(sceneName);
+            }
         }
     }
 }
