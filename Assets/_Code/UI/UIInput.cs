@@ -59,9 +59,8 @@ namespace BachelorProject.Player
             }
         }
 
-        public void MenuPauseReset(bool inGame)
+        public void MenuPauseReset()
         {
-            if (inGame) return;
             Time.timeScale = 1;
             isPaused.Variable.Value = false;
             Helper.CursorStates.UnlockCursor();
