@@ -60,6 +60,15 @@ namespace BachelorProject.Player
             }
         }
 
+        public void MenuPauseReset(bool inGame)
+        {
+            if (inGame) return;
+            Time.timeScale = 1;
+            isPaused.Variable.Value = false;
+            Helper.CursorStates.UnlockCursor();
+            menuScreen.GetSourceObject()?.SetActive(true);
+        }
+        
         public void PauseGame()
         {
             isPaused.Variable.Value = true;

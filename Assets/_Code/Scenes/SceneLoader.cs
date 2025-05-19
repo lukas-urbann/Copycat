@@ -1,5 +1,5 @@
 using System.Collections;
-using BachelorProject.Management;
+using BachelorProject.Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +8,22 @@ namespace BachelorProject.Scenes
     public class SceneLoader : MonoBehaviour
     {
         public ObjectIdentifier loadingSceneIdentifier;
+        public SceneNameReference mainMenuScene;
+        public BoolEvent menuSceneLoaded;
+        public BoolEvent gameSceneLoaded;
 
-        public void LoadSceneCall(StringVariable sceneId)
+        private void OnEnable()
+        {
+            SceneCheck();
+        }
+
+        private void SceneCheck()
+        {
+            menuSceneLoaded?.Execute(SceneManager.GetActiveScene().name == mainMenuScene.Value);
+            gameSceneLoaded?.Execute(SceneManager.GetActiveScene().name != mainMenuScene.Value);
+        }
+
+        public void LoadSceneCall(SceneNameReference sceneId)
         {
             StartCoroutine(LoadScene(sceneId.Value));
         }
@@ -22,9 +36,10 @@ namespace BachelorProject.Scenes
 
             while (asyncLoad is { isDone: false })
             {
-                yield return null;
+                yield return new WaitForSeconds(1);
             }
             
+            SceneCheck();
             loadingSceneIdentifier.GetSourceComponent<CanvasGroup>().alpha = 0;
         }
     }

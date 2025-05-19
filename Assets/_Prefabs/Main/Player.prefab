@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2924750639909210495}
   - component: {fileID: 167703061533784521}
   - component: {fileID: 6635741567568031808}
+  - component: {fileID: 2640376718754412819}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -440,6 +441,35 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &2640376718754412819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2939635296200067425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d774910e1c4d2441e955b9d54488c43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7363257625963567250}
+        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterInteractor,
+          Assembly-CSharp
+        m_MethodName: SetInteractivity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4810329794948074931
 GameObject:

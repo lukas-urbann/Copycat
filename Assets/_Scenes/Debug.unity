@@ -171,10 +171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystems
       objectReference: {fileID: 0}
-    - target: {fileID: 7275064172283597481, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
-      propertyPath: onPauseEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
     - target: {fileID: 8931500340328718617, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -184,51 +180,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
---- !u!1 &335690702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2939635296200067425, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
-  m_PrefabInstance: {fileID: 1146290341}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &335690708 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7363257625963567250, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
-  m_PrefabInstance: {fileID: 1146290341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335690702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49ea0507b0571cc49902f6068eedee7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &335690715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335690702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d774910e1c4d2441e955b9d54488c43c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: ca9b491726f194b5882cffa20579bef9, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 335690708}
-        m_TargetAssemblyTypeName: BachelorProject.Player.PlayableCharacterInteractor,
-          Assembly-CSharp
-        m_MethodName: SetInteractivity
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &823110901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -563,10 +514,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2939635296200067425, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 335690715}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfce3637bcc3e489b9954907302ebfd4, type: 3}
 --- !u!1001 &1222277891
 PrefabInstance:

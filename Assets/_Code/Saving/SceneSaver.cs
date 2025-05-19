@@ -1,3 +1,5 @@
+using BachelorProject.Events;
+using BachelorProject.Scenes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +9,22 @@ namespace BachelorProject.Saving
     {
         private const string LEVEL_SAVE = "LastScene";
 
+        public ObjectIdentifier gameSystems;
+        public SceneNameReference nullContinueScene;
+        public BoolEvent hasSavedGame;
+
+        private void Start()
+        {
+            if (PlayerPrefs.HasKey(LEVEL_SAVE))
+            {
+                hasSavedGame?.Execute(true);
+            }
+            else
+            {
+                hasSavedGame?.Execute(false);
+            }
+        }
+
         public void SaveScene()
         {
             string sceneName = SceneManager.GetActiveScene().name;
@@ -14,19 +32,34 @@ namespace BachelorProject.Saving
             Debug.Log($"Postup uložen - {sceneName}");
         }
 
+        public void DebugPrintScene()
+        {
+            Debug.Log("Uložená scéna: " + GetLatestScene());
+        } 
+
         private string GetLatestScene() => PlayerPrefs.HasKey(LEVEL_SAVE) ? PlayerPrefs.GetString(LEVEL_SAVE) : "NULL";
+        
+        private string GetCurrentScene() => SceneManager.GetActiveScene().name;
 
         public void LoadLatestScene()
         {
-            StringVariable lastScene = new(PlayerPrefs.GetString(LEVEL_SAVE));
+            var lastScene = ScriptableObject.CreateInstance<SceneNameReference>();
+            lastScene.Value = GetLatestScene();
+            
+            if (!gameSystems.GetSourceComponent(out SceneLoader sc))
+            {
+                Debug.LogError("Nelze najít scene loader v GameSystems");
+                return;
+            }
             
             if (Application.CanStreamedLevelBeLoaded(lastScene.Value))
             {
-                
+                sc.LoadSceneCall(lastScene);
             }
             else
             {
                 Debug.LogError($"Scéna {lastScene.Value} nebyla nalezena v buildu. Načítám hru od začátku.");
+                sc.LoadSceneCall(nullContinueScene);
             }
         }
     }

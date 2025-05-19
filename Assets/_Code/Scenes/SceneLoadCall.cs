@@ -6,7 +6,7 @@ namespace BachelorProject.Scenes
     {
         public ObjectIdentifier gameSystems;
 
-        public void LoadScene(StringVariable sceneName)
+        public void LoadScene(SceneNameReference sceneName)
         {
             if (!sceneName)
             {
