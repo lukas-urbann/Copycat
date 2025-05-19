@@ -23,7 +23,7 @@ namespace BachelorProject.Interactable
             {
                 if (!TryGetComponent(out leverAnimator))
                 {
-                    Debug.LogError("Páka nemá animator");
+                    Debug.LogError("Pï¿½ka nemï¿½ animator");
                 }
             }
 
@@ -32,6 +32,7 @@ namespace BachelorProject.Interactable
 
         public void ToggleLever()
         {
+            Debug.Log("Toggling lever");
             Use();
         }
 

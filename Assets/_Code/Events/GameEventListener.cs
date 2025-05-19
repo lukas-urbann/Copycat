@@ -1,32 +1,31 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace BachelorProject.Events
 {
-    public class GameEventListener : MonoBehaviour
+    public abstract class GameEventListener : MonoBehaviour
     {
-        public GameEvent Event;
-        public UnityEvent Response;
+        public GameEvent gameEvent;
 
         private void OnEnable()
         {
-            if (Event != null)
-            {
-                Event.RegisterListener(this);
-            }
+            if (gameEvent) gameEvent.RegisterListener(this);
         }
 
         private void OnDisable()
         {
-            if (Event != null)
-            {
-                Event.UnregisterListener(this);
-            }
+            if (gameEvent) gameEvent.UnregisterListener(this);
         }
 
-        public void OnEventRaised()
+        public virtual void OnEventExecuted()
         {
-            Response.Invoke();
+            //Response.Invoke();
+            Debug.Log("EventExecuted");
+        }
+
+        public virtual void OnEventExecuted(object parameter)
+        {
+            //Response.Invoke(parameter);
+            Debug.Log("EventExecuted s parametrem: " + parameter);
         }
     }
 }

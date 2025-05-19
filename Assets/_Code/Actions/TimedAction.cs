@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using BachelorProject.Events;
 using UnityEngine;
@@ -11,8 +12,8 @@ namespace BachelorProject.Actions
         [SerializeField] private bool startOnEnable = false;
         [SerializeField] private bool actionLoop = false;
         [SerializeField] private FloatReference actionDelay;
-        [SerializeField] private GameEvent onDelayStart;
-        [SerializeField] private GameEvent onDelayComplete;
+        [SerializeField] private VoidEvent onDelayStart;
+        [SerializeField] private VoidEvent onDelayComplete;
         public UnityEvent onDelayStartUnityEvent = new UnityEvent();
         public UnityEvent onDelayCompleteUnityEvent = new UnityEvent();
 

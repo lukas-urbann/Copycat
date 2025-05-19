@@ -8,18 +8,18 @@ namespace BachelorProject.Player
     public class PlayableCharacterInteractor : MonoBehaviour
     {
         [SerializeField] private FloatReference interactionDistance;
-        [Tooltip("Která maska se považuje za interaktovatelnou")]
-        [SerializeField] private LayerMask interactableLayer = ~0; // Výchozí na 0, aby bylo zahrnuto vše
-        [SerializeField] private GameObject interactionPrompt;
+        [Tooltip("KterÃ¡ maska se povaÅ¾uje za interaktovatelnou")]
+        [SerializeField] private LayerMask interactableLayer = ~0; // VÃ½chozÃ­ na 0, aby bylo zahrnuto vÅ¡e
+        [SerializeField] private ObjectIdentifier interactionPrompt;
         [SerializeField] private Camera interactionCamera;
 
         [Header("Events")]
-        public GameEvent InteractEvent;
-        public GameEvent DropEvent;
-        public GameEvent SeeInteractable;
-        public GameEvent UnseeInteractable;
+        public VoidEvent InteractEvent;
+        public VoidEvent DropEvent;
+        public VoidEvent SeeInteractable;
+        public VoidEvent UnseeInteractable;
 
-        #region Privátní promìnné
+        #region Privï¿½tnï¿½ promï¿½nnï¿½
 
         private IInteractable currentInteractable;
         private bool interactableInReach = false;
@@ -35,7 +35,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError($"{typeof(PlayableCharacterInteractor)} nemá input!");
+                Debug.LogError($"{typeof(PlayableCharacterInteractor)} nemï¿½ input!");
             }
 
             AssignActions();
@@ -60,17 +60,17 @@ namespace BachelorProject.Player
             {
                 if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
                 {
-                    if (currentInteractable != interactable) // Pokud hráè vidí jiný interaktovatelný objekt
+                    if (currentInteractable != interactable) // Pokud hrï¿½ï¿½ vidï¿½ jinï¿½ interaktovatelnï¿½ objekt
                     {
-                        currentInteractable?.OnUnsee(); // Pokud hráè pøejel na nový objekt, tak odvolat ten starý
-                        if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme mìli pøedtím nìjaký interactable
+                        currentInteractable?.OnUnsee(); // Pokud hrï¿½ï¿½ pï¿½ejel na novï¿½ objekt, tak odvolat ten starï¿½
+                        if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme mï¿½li pï¿½edtï¿½m nï¿½jakï¿½ interactable
 
                         if (interactable.IsInteractable)
                         {
-                            currentInteractable = interactable; // Pøesunutí na nový interactable
+                            currentInteractable = interactable; // Pï¿½esunutï¿½ na novï¿½ interactable
                             currentInteractable?.OnSee();
                             interactableInReach = true;
-                            interactionPrompt?.SetActive(true);
+                            interactionPrompt.GetSourceObject()?.SetActive(true);
                             SeeInteractable.Execute();
                         }
                     }
@@ -78,12 +78,12 @@ namespace BachelorProject.Player
                 }
             }
 
-            if (interactableInReach) // Pokud jsme se od interaktovatelného objektu vzdálili
+            if (interactableInReach) // Pokud jsme se od interaktovatelnï¿½ho objektu vzdï¿½lili
             {
                 currentInteractable?.OnUnsee();
                 currentInteractable = null;
                 interactableInReach = false;
-                interactionPrompt?.SetActive(false);
+                interactionPrompt.GetSourceObject()?.SetActive(false);
                 UnseeInteractable.Execute();
             }
         }

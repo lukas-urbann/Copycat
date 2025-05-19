@@ -10,7 +10,7 @@ namespace BachelorProject.Management
 
         private void OnEnable()
         {
-            if (identifier != null)
+            if (identifier)
             {
                 ObjectRegistry.Register(identifier, this.gameObject);
             }
@@ -18,7 +18,7 @@ namespace BachelorProject.Management
 
         private void OnDestroy()
         {
-            if (identifier != null)
+            if (identifier)
             {
                 ObjectRegistry.Unregister(identifier);
             }

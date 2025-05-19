@@ -7,7 +7,7 @@ namespace BachelorProject.Interactable
     public class StaticInteractable : BaseInteractable
     {
         [Header("Static Interactable")]
-        public GameEvent onInteract;
+        public VoidEvent onInteract;
         public UnityEvent onInteractEvent;
 
         public override void Interact()

@@ -15,8 +15,8 @@ namespace BachelorProject.Interactable
     public class CollisionInteractable : BaseInteractable
     {
         [Header("Collision Interactable")]
-        [SerializeField] private GameEvent OnCollideEnter;
-        [SerializeField] private GameEvent onCollideExit;
+        [SerializeField] private VoidEvent OnCollideEnter;
+        [SerializeField] private VoidEvent onCollideExit;
         
         public CollisionType collisionType = CollisionType.Trigger;
         public List<ObjectIdentifier> acceptedObjects = new();
@@ -41,8 +41,7 @@ namespace BachelorProject.Interactable
             {
                 return;
             }
-
-
+            
             OnCollideEnter?.Execute();
             onCollideEnterUnityEvent?.Invoke();
         }

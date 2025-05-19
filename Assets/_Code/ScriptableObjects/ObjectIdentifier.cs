@@ -1,7 +1,21 @@
+using BachelorProject.Management;
 using UnityEngine;
 
 [CreateAssetMenu]
 public class ObjectIdentifier : ScriptableObject
 {
-    //Mùže zùstat prázdné, dùležitá je reference na tento objekt
+    public GameObject GetSourceObject()
+    {
+        return ObjectRegistry.GetObject(this);
+    }
+
+    public T GetSourceComponent<T>()
+    {
+        if (GetSourceObject().TryGetComponent(out T comp))
+        {
+            return comp;
+        }
+
+        return default(T);
+    }
 }

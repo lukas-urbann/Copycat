@@ -10,17 +10,17 @@ namespace BachelorProject.Player
         [SerializeField] private Vector3 heldItemRotation = Vector3.zero;
 
         [Header("Events")]
-        public GameEvent ItemGrabEvent;
-        public GameEvent ItemDropEvent;
-        public GameEvent ItemUseEvent;
+        public VoidEvent ItemGrabEvent;
+        public VoidEvent ItemDropEvent;
+        public VoidEvent ItemUseEvent;
 
-        private GameObject currentHeldItem;
-        private GrabbableInteractable currentGrabbable;
-        private bool isUsingItem = true;
+        private GameObject _currentHeldItem;
+        private GrabbableInteractable _currentGrabbable;
+        private bool _isUsingItem = true;
 
         public void ToggleHandItemUse(bool val)
         {
-            isUsingItem = val;
+            _isUsingItem = val;
         }
 
         public void HoldItem(GameObject item)
@@ -28,17 +28,17 @@ namespace BachelorProject.Player
             if (item == null)
                 return;
 
-            if (currentHeldItem != null && currentGrabbable != null)
+            if (_currentHeldItem != null && _currentGrabbable != null)
             {
-                currentGrabbable.Drop();
+                _currentGrabbable.Drop();
             }
 
-            currentHeldItem = item;
-            currentGrabbable = item.GetComponent<GrabbableInteractable>();
+            _currentHeldItem = item;
+            _currentGrabbable = item.GetComponent<GrabbableInteractable>();
 
-            if (currentHeldItem != null && (heldItemOffset != Vector3.zero || heldItemRotation != Vector3.zero))
+            if (_currentHeldItem != null && (heldItemOffset != Vector3.zero || heldItemRotation != Vector3.zero))
             {
-                Transform itemTransform = currentHeldItem.transform;
+                Transform itemTransform = _currentHeldItem.transform;
                 itemTransform.SetLocalPositionAndRotation(heldItemOffset, Quaternion.Euler(heldItemRotation));
             }
 
@@ -47,16 +47,16 @@ namespace BachelorProject.Player
 
         public void ReleaseItem()
         {
-            currentHeldItem = null;
-            currentGrabbable = null;
+            _currentHeldItem = null;
+            _currentGrabbable = null;
             ItemDropEvent?.Execute();
         }
 
         public void UseItem()
         {
-            if (currentHeldItem != null && currentGrabbable != null && isUsingItem)
+            if (_currentHeldItem != null && _currentGrabbable != null && _isUsingItem)
             {
-                currentGrabbable.Use();
+                _currentGrabbable.Use();
                 ItemUseEvent?.Execute();
             }
         }

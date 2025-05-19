@@ -7,8 +7,8 @@ namespace BachelorProject.Interactable
     public class UseableInteractable : BaseInteractable
     {
         [Header("Useable Interactable")]
-        public GameEvent eventOnInteract;
-        public GameEvent eventOnUse;
+        public VoidEvent eventOnInteract;
+        public VoidEvent eventOnUse;
         
         protected UnityEvent UnityEventOnInteract;
         protected UnityEvent UnityEventOnUse;
