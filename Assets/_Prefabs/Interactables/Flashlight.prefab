@@ -345,6 +345,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1370172201955016362, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+      propertyPath: dropAudio.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 31f1d90e339e9473cb7b718a9a2e5eae, type: 3}
+    - target: {fileID: 1370172201955016362, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+      propertyPath: interactAudio.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c9b9ca68ff749481d8a832ac40d3a506, type: 3}
+    - target: {fileID: 1370172201955016362, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+      propertyPath: dropAudio.audioSourceIdentifier
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
+    - target: {fileID: 1370172201955016362, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
+      propertyPath: interactAudio.audioSourceIdentifier
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
     - target: {fileID: 6702045776289793746, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -391,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8943584047583507935, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}
       propertyPath: m_Name
-      value: Flashlight Variant
+      value: Flashlight
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8634943749789685503, guid: ea17431641b0f4b5a81d6a5eb0b8a849, type: 3}

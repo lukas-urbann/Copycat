@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using BachelorProject.Helper;
 using BachelorProject.Management;
+using BachelorProject.Audio;
 
 namespace BachelorProject.Interactable
 {
@@ -13,6 +14,11 @@ namespace BachelorProject.Interactable
         [SerializeField] private FloatReference snapDistance;
         [SerializeField] private ObjectIdentifier playerHandIdentifier;
         public ObjectIdentifier playerRoot;
+
+        [Header("Audio")]
+        public AudioCall useAudio;
+        public AudioCall interactAudio;
+        public AudioCall dropAudio;
 
         private bool _gamePaused = false;
         private bool _isGrabbed = false;
@@ -42,6 +48,7 @@ namespace BachelorProject.Interactable
         {
             if (_gamePaused) return;
             Debug.Log($"{gameObject.name} - Use");
+            useAudio.Play();
         }
 
         public override void Interact()
@@ -49,7 +56,7 @@ namespace BachelorProject.Interactable
             if (_gamePaused) return;
             if (ObjectRegistry.GetObject(playerRoot) == null)
             {
-                Debug.LogWarning($"{transform.root.name}: Root hr��e nen� v registry, nem��u grabnout.");
+                Debug.LogWarning($"{transform.root.name}: Root hráče není v registry, nemůžu grabnout.");
                 return;
             }
 
@@ -62,6 +69,7 @@ namespace BachelorProject.Interactable
                 }
 
                 _isBeingLerped = true;
+                interactAudio.Play();
                 StartCoroutine(LerpToHand());
             }
         }
@@ -105,6 +113,8 @@ namespace BachelorProject.Interactable
         {
             if (_gamePaused) return;
             if (!_isGrabbed) return;
+
+            dropAudio.Play();
 
             transform.SetParent(null);
 

@@ -23,7 +23,7 @@ namespace BachelorProject.Interactable
             {
                 if (!TryGetComponent(out leverAnimator))
                 {
-                    Debug.LogError("P�ka nem� animator");
+                    Debug.LogError("Páka nemá animator");
                 }
             }
 

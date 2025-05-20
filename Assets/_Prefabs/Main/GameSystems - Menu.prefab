@@ -50,7 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2475379712245995556, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
       propertyPath: m_Name
-      value: GameSystems Variant
+      value: GameSystems - Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277893999805071375, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3728500614954816481, guid: 6d21c9df090ad41deb32aef32cc89b4f, type: 3}
       propertyPath: m_AnchorMax.y

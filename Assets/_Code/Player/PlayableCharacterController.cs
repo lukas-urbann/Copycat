@@ -7,7 +7,6 @@ namespace BachelorProject.Player
     [RequireComponent(typeof(PlayableCharacterInput))]
     public class PlayableCharacterController : MonoBehaviour
     {
-
         #region Movement Control
 
         [Header("Movement Control")]

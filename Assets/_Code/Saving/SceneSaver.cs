@@ -25,6 +25,11 @@ namespace BachelorProject.Saving
             }
         }
 
+        public void ResetSaves()
+        {
+            PlayerPrefs.DeleteAll();
+        }
+
         public void SaveScene()
         {
             string sceneName = SceneManager.GetActiveScene().name;

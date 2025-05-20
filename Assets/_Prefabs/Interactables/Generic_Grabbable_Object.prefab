@@ -198,6 +198,15 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: af644d94ff3fe3743bbf475a2df478b4, type: 2}
   playerHandIdentifier: {fileID: 11400000, guid: e7d07994041bf174a83889605bc29f12, type: 2}
   playerRoot: {fileID: 11400000, guid: c813dce3f0f319441b20d0eaea8fd6d1, type: 2}
+  useAudio:
+    audioSourceIdentifier: {fileID: 0}
+    clip: {fileID: 0}
+  interactAudio:
+    audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
+    clip: {fileID: 8300000, guid: c9b9ca68ff749481d8a832ac40d3a506, type: 3}
+  dropAudio:
+    audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
+    clip: {fileID: 8300000, guid: 31f1d90e339e9473cb7b718a9a2e5eae, type: 3}
 --- !u!114 &6279781711345343407
 MonoBehaviour:
   m_ObjectHideFlags: 0
