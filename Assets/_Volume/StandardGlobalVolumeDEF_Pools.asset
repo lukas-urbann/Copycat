@@ -37,7 +37,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.479
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -87,10 +87,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.9435846, y: 0.8535811, z: 1, w: 0}
+    m_Value: {x: 0.9098735, y: 0.93038, z: 1, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.83912, z: 0.7074535, w: 0.08938547}
+    m_Value: {x: 1, y: 0.92003477, z: 0.89015675, w: 0.08938547}
   highlights:
     m_OverrideState: 0
     m_Value: {x: 1, y: 0.8101672, z: 0.26097488, w: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: StandardGlobalVolumeDEF
+  m_Name: StandardGlobalVolumeDEF_Pools
   m_EditorClassIdentifier: 
   components:
   - {fileID: -3006625928171875374}
@@ -144,13 +144,13 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 15
+    m_Value: 5
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 58.57
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 1.5
@@ -158,8 +158,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 1.81
   aperture:
     m_OverrideState: 0
     m_Value: 5.6
@@ -196,7 +196,7 @@ MonoBehaviour:
     m_Value: 0.4
   intensity:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 6
   scatter:
     m_OverrideState: 1
     m_Value: 0.695
@@ -302,13 +302,13 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9562305, z: 0.9658881, w: 0}
+    m_Value: {x: 0.94274884, y: 0.9843956, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.92130244, y: 0.98798186, z: 1, w: 0}
+    m_Value: {x: 0.9649785, y: 0.9996768, z: 1, w: 0}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.84525776, z: 0.90948623, w: 0}
+    m_Value: {x: 1, y: 0.819764, z: 0.9797226, w: 0}
 --- !u!114 &8836558564706562264
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -324,4 +324,4 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.312
+    m_Value: 0.49

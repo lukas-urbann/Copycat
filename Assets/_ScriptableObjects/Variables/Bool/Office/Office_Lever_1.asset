@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c398e591117944e48921914e2a56732, type: 3}
-  m_Name: Endgame
+  m_Script: {fileID: 11500000, guid: 0c4a0e398962a41328b339db166f3bc6, type: 3}
+  m_Name: Office_Lever_1
   m_EditorClassIdentifier: 
-  Value: Endgame
+  Value: 0

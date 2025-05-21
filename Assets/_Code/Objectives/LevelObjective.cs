@@ -3,11 +3,13 @@ using UnityEngine;
 
 namespace BachelorProject.Objectives
 {
-    public class LevelObjective : MonoBehaviour
+    public abstract class LevelObjective : MonoBehaviour
     {
         public VoidEvent ObjectiveSuccess;
         public VoidEvent ObjectiveUnuccess;
 
+        public abstract void CheckRequirements();
+        
         public void OnObjectiveUnsuccessful()
         {
             ObjectiveUnuccess?.Execute();

@@ -9,7 +9,7 @@ namespace BachelorProject.Objectives
         [SerializeField] private bool melchiorRequirement = false;
         [SerializeField] private bool baltazarRequirement = false;
 
-        public void CheckRequirements()
+        public override void CheckRequirements()
         {
             if (casperRequirement && melchiorRequirement && baltazarRequirement)
             {

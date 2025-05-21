@@ -1,4 +1,5 @@
 using BachelorProject.Audio;
+using BachelorProject.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,7 +7,9 @@ namespace BachelorProject.Interactable
 {
     public class LeverInteractable : UseableInteractable
     {
-        [Header("Lever Interactable")]
+        [Header("Lever Interactable")] [SerializeField]
+        private BoolEvent leverToggledEvent;
+        [SerializeField] private BoolReference leverValue;
         [SerializeField] private bool toggledOn = false;
         [SerializeField] private Animator leverAnimator;
         [SerializeField] private AudioCall switchAudio;
@@ -29,18 +32,31 @@ namespace BachelorProject.Interactable
                 }
             }
 
-            leverAnimator.SetBool("toggledOn", toggledOn);
+            if (leverAnimator)
+                leverAnimator.SetBool("toggledOn", toggledOn);
+            
+            if (leverValue.Variable != null)
+                leverValue.Variable.Value = toggledOn;
         }
 
-        public void ToggleLever()
+        private void ToggleLever()
         {
-            switchAudio.Play();
             Use();
+            
+            if (leverToggledEvent)
+                leverToggledEvent?.Execute();
         }
 
         public void ToggleLeverState()
         {
-            leverAnimator.SetBool("toggledOn", toggledOn = !toggledOn);
+            if (switchAudio != null)
+                switchAudio.Play();
+            
+            if (leverAnimator != null)
+                leverAnimator.SetBool("toggledOn", toggledOn = !toggledOn);
+            
+            if (leverValue.Variable != null)
+                leverValue.Variable.Value = toggledOn;
         }
     }
 }

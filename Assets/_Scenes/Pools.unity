@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: a1c81654b744c654198c6b94f5d00926, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: c66b27751e98e604aba5790fa9006416, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -13830,6 +13830,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 210135ce1a85c45e88e1f522def2d07e, type: 3}
+    - target: {fileID: 4773321882160782954, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: fd831b98c427c4042a7ec48d5483078c, type: 2}
     - target: {fileID: 4827175951572960636, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
       propertyPath: m_Resource
       value: 
@@ -13899,6 +13903,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1547293172259099779, guid: 6a158942ba32046e2b7ed2fa76b3fa16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269038775508320344, guid: 6a158942ba32046e2b7ed2fa76b3fa16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4784022377081322872, guid: 6a158942ba32046e2b7ed2fa76b3fa16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.24
