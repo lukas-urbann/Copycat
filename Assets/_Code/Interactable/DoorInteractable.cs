@@ -78,7 +78,7 @@ namespace BachelorProject.Interactable
             ToggleOpen();
         }
 
-        private void ToggleOpen()
+        public void ToggleOpen()
         {
             Use();
             doorOpen.Play();
