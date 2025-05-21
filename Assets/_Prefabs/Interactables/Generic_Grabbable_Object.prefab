@@ -208,7 +208,7 @@ MonoBehaviour:
     audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
     cachedAudioSource: {fileID: 0}
     possibleClips:
-    - {fileID: 8300000, guid: c9b9ca68ff749481d8a832ac40d3a506, type: 3}
+    - {fileID: 8300000, guid: b22669e06976e014295dc200c2515d51, type: 3}
   dropAudio:
     audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
     cachedAudioSource: {fileID: 0}
@@ -333,7 +333,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0

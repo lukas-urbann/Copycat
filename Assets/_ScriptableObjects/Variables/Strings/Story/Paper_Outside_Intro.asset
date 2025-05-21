@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c398e591117944e48921914e2a56732, type: 3}
-  m_Name: Office
+  m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
+  m_Name: Paper_Outside_Intro
   m_EditorClassIdentifier: 
-  Value: Offices
+  Value: The three kings - they are sad, they are looking in the wrong direction.
+    You should point them where they should go. In return, they'll show you the way.

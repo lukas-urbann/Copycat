@@ -1,3 +1,4 @@
+using BachelorProject.Audio;
 using BachelorProject.Management;
 using BachelorProject.UI;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace BachelorProject.Interactable
         [SerializeField] protected StringVariable doorUnlockedString;
         [SerializeField] private Animator doorAnimator;
         [SerializeField] private UnityEvent<bool> onDoorOpenEvent = new();
+        [SerializeField] private AudioCall doorOpen;
 
         private void OnEnable()
         {
@@ -32,11 +34,12 @@ namespace BachelorProject.Interactable
             {
                 if (!TryGetComponent(out doorAnimator))
                 {
-                    Debug.Log("Dve�e nemaj� animator");
+                    Debug.Log("Dvere nemaji animator");
                 }
             }
 
-            doorAnimator.SetBool("isOpen", isOpen);
+            if (doorAnimator)
+                doorAnimator.SetBool("isOpen", isOpen);
         }
 
         private void TryToggleOpen()
@@ -78,17 +81,20 @@ namespace BachelorProject.Interactable
         private void ToggleOpen()
         {
             Use();
+            doorOpen.Play();
             onDoorOpenEvent?.Invoke(isOpen);
         }
 
         public void ToggleDoorState()
         {
-            doorAnimator.SetBool("isOpen", isOpen = !isOpen);
+            if (doorAnimator)
+                doorAnimator.SetBool("isOpen", isOpen = !isOpen);
         }
 
         public void ToggleDoorState(bool val)
         {
-            doorAnimator.SetBool("isOpen", isOpen = val);
+            if (doorAnimator)
+                doorAnimator.SetBool("isOpen", isOpen = val);
         }
     }
 }

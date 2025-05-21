@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
-  m_Name: Story5
+  m_Name: Paper_Pools_Click
   m_EditorClassIdentifier: 
-  Value: Oh, and you know what else you can do, press the right mouse button, it's
-    fun, especially in this dark... if you're holding a flashlight... I hope you
-    didn't get here without it then. You should have brought it if you didn't know...
-    or whatever, there's a light switch somewhere, find it.
+  Value: He did not know his nature, though he longed for it. But he did not know
+    the answer. He picked up the flashlight from the ground with a left click. Go
+    on, go on your way, for there is no salvation here.

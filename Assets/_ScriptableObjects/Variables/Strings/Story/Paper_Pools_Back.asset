@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
-  m_Name: Story4
+  m_Name: Paper_Pools_Back
   m_EditorClassIdentifier: 
-  Value: 'Look, as your creator, mentor, god, and everything that is dear to you,
-    my advice is this: There''s a very useful thing in the back of this room, you''re
-    gonna need it. Oh, and please don''t get in the pipe behind you. No really, I
-    knew you''d climb in there, so I made you fat so you couldn''t.'
+  Value: I like the ball, it's nice. Although you probably can't pick it up... You
+    have two hands, but you only want to use one. Why? Press the right button to
+    throw the active object, but is it of any use to you?

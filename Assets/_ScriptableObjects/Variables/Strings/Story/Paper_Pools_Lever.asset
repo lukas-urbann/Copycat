@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
-  m_Name: Paper_CMB
+  m_Name: Paper_Pools_Lever
   m_EditorClassIdentifier: 
-  Value: The three kings - they are sad, they are looking in the wrong direction.
-    You should point them where they should go. In return, they'll show you the way.
+  Value: He who is not afraid, pull the lever and open the door to the devil. For
+    he waits behind this door... or not, for all I know.

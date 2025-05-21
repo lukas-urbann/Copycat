@@ -13,6 +13,11 @@ namespace BachelorProject.Interactable
         protected UnityEvent UnityEventOnInteract;
         protected UnityEvent UnityEventOnUse;
         
+        public void DestroyScript()
+        {
+            Destroy(this);
+        }
+
         public override void Interact()
         {
             eventOnInteract?.Execute();

@@ -10,7 +10,7 @@ namespace BachelorProject.Events
 
         public void Execute()
         {
-            Debug.Log($"{GetType().Name} - Vyvolání void eventu");
+            Debug.Log($"{this.name} - Vyvolání void eventu");
             
             for (int i = _listeners.Count - 1; i >= 0; i--)
             {

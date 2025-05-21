@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fce44aad17a92ff48b9754825f6fa3f5, type: 3}
-  m_Name: Story1
+  m_Name: Paper_Pools_Vlad
   m_EditorClassIdentifier: 
-  Value: And there he was, alone and abandoned. He was not there by mistake, but
-    he did not know the reason why. Of flesh and blood, or zeros and ones, his integrity
-    was known.
+  Value: 'I left the ball behind, leave it there for him. - Vlad PS: WHY THE HELL
+    IS THE LIGHTSWTICH ON THE CEILING'
