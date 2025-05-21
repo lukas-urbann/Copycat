@@ -541,14 +541,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   footstepsAudio:
     audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
+    cachedAudioSource: {fileID: 0}
     possibleClips:
-    - {fileID: 8300000, guid: 6dab018a505fe46a08ef6b9b1c2f7901, type: 3}
-    - {fileID: 8300000, guid: 1a30f55d92c16436f94abdf63eff06e2, type: 3}
-    - {fileID: 8300000, guid: c56e4111f038e43f1b5f1aea4e0ef511, type: 3}
+    - {fileID: 8300000, guid: ed6135ad22e55bb4f92dcdaf5a588e71, type: 3}
+    - {fileID: 8300000, guid: c9fb689836aaf8341868c82ede36498a, type: 3}
+    - {fileID: 8300000, guid: 9b226a8687ebe644dbee9443b17eb209, type: 3}
+    - {fileID: 8300000, guid: 3ea495568d4db7f4abcfda554649a564, type: 3}
+    - {fileID: 8300000, guid: e90524d858ea112458f406763559a533, type: 3}
+    - {fileID: 8300000, guid: 916f28428cf668c42aa9c7ca90c56af3, type: 3}
+    - {fileID: 8300000, guid: da295625f6fdd514d862093d55a0202e, type: 3}
+    - {fileID: 8300000, guid: 6d3cb3622c9fd53468caa464cfb78655, type: 3}
+    - {fileID: 8300000, guid: ce960a798b5596142a47766719299f75, type: 3}
   jumpAudio:
     audioSourceIdentifier: {fileID: 11400000, guid: 7c0817b9208d04847a8d535f642f01a0, type: 2}
+    cachedAudioSource: {fileID: 0}
     possibleClips:
-    - {fileID: 8300000, guid: 31f1d90e339e9473cb7b718a9a2e5eae, type: 3}
+    - {fileID: 8300000, guid: ed6135ad22e55bb4f92dcdaf5a588e71, type: 3}
+    - {fileID: 8300000, guid: c9fb689836aaf8341868c82ede36498a, type: 3}
+    - {fileID: 8300000, guid: 9b226a8687ebe644dbee9443b17eb209, type: 3}
+    - {fileID: 8300000, guid: 3ea495568d4db7f4abcfda554649a564, type: 3}
+    - {fileID: 8300000, guid: e90524d858ea112458f406763559a533, type: 3}
+    - {fileID: 8300000, guid: 916f28428cf668c42aa9c7ca90c56af3, type: 3}
+    - {fileID: 8300000, guid: da295625f6fdd514d862093d55a0202e, type: 3}
+    - {fileID: 8300000, guid: 6d3cb3622c9fd53468caa464cfb78655, type: 3}
+    - {fileID: 8300000, guid: ce960a798b5596142a47766719299f75, type: 3}
 --- !u!1 &5015038314515863148
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,8 +848,8 @@ Camera:
   m_GameObject: {fileID: 7534424626261423086}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.18289427, g: 0.21977086, b: 0.2830189, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.500623, g: 0.61580765, b: 0.8490566, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -855,7 +871,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.02
-  far clip plane: 50
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 5

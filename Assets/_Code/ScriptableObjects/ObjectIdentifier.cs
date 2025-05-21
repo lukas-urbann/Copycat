@@ -21,7 +21,7 @@ public class ObjectIdentifier : ScriptableObject
         
         if (!sourceObject)
         {
-            Debug.LogError("ObjectIdentifier: Source object je null");
+            Debug.LogWarning("ObjectIdentifier: Source object je null");
             comp = default(T);
             return false;
         }

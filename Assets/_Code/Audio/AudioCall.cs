@@ -7,9 +7,11 @@ namespace BachelorProject.Audio
     [Serializable]
     public class AudioCall
     {
+        [Header("Identifikátor, kde se hledá audio source")]
         public ObjectIdentifier audioSourceIdentifier;
+        [Header("Audio Source ze kterého se zvuk hraje")]
+        public AudioSource cachedAudioSource = null;
         public List<AudioClip> possibleClips;
-        private AudioSource cachedAudioSource = null;
 
         public void Play()
         {

@@ -1,3 +1,4 @@
+using BachelorProject.Audio;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,6 +9,7 @@ namespace BachelorProject.Interactable
         [Header("Lever Interactable")]
         [SerializeField] private bool toggledOn = false;
         [SerializeField] private Animator leverAnimator;
+        [SerializeField] private AudioCall switchAudio;
 
         private void OnEnable()
         {
@@ -32,6 +34,7 @@ namespace BachelorProject.Interactable
 
         public void ToggleLever()
         {
+            switchAudio.Play();
             Use();
         }
 

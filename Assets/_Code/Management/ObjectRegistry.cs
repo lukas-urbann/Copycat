@@ -21,7 +21,7 @@ namespace BachelorProject.Management
         {
             return !id ? null : _registry.GetValueOrDefault(id);
         }
-    
+
         public static bool GetObject(ObjectIdentifier id, out GameObject go)
         {
             if (!id)

@@ -950,7 +950,7 @@ Texture2D:
   m_Name: Unispace Rg Atlas
   m_ImageContentsHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 008afb09ea29886147084183da072fa6
   m_IsAlphaChannelOptional: 0
   serializedVersion: 4
   m_Width: 1

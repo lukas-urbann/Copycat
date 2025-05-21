@@ -13067,6 +13067,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 770036284}
     m_Modifications:
+    - target: {fileID: 4480921394756689633, guid: d404d892b3335442a9d27eb436af3561, type: 3}
+      propertyPath: collisionAudio.audioSourceIdentifier
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4725784296030761792, guid: d404d892b3335442a9d27eb436af3561, type: 3}
       propertyPath: m_Name
       value: Beach Ball
@@ -13234,6 +13238,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2257054140788643371, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2257054140788643371, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 210135ce1a85c45e88e1f522def2d07e, type: 3}
+    - target: {fileID: 2257054140788643371, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 210135ce1a85c45e88e1f522def2d07e, type: 3}
+    - target: {fileID: 4827175951572960636, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 650aa4480b1f8f04f813aabc010eefb2, type: 3}
+    - target: {fileID: 4827175951572960636, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 650aa4480b1f8f04f813aabc010eefb2, type: 3}
     - target: {fileID: 5522811509713155810, guid: 2c7964afb660645f5ae668bc3a594495, type: 3}
       propertyPath: m_Name
       value: GameSystems
