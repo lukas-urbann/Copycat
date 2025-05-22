@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Vypíná hru.
+    /// </summary>
     public class GameControl : MonoBehaviour
     {
         public void QuitGame()

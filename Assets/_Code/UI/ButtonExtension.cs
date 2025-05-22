@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Extenze tlacitka o zvukove efekty
+    /// </summary>
     public class ButtonExtension : MonoBehaviour
     {
         public AudioCall buttonHover;

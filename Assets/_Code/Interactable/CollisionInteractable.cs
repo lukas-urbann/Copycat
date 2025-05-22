@@ -12,6 +12,10 @@ namespace BachelorProject.Interactable
         Collider
     }
 
+    /// <summary>
+    /// Objekt interaktujici s kolizemi
+    /// Ma povolene objekty na ktere reaguje pomoci jejich ID a vyvolava eventy
+    /// </summary>
     public class CollisionInteractable : BaseInteractable
     {
         [Header("Collision Interactable")]
@@ -112,6 +116,8 @@ namespace BachelorProject.Interactable
             onCollideExit?.Execute();
             onCollideExitUnityEvent?.Invoke();
         }
+        
+        //Nelze s nim primo interagovat
         
         public override void Interact()
         {

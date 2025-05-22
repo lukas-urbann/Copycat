@@ -4,6 +4,11 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Staticky interactable.
+    /// Primarne urcen pro interakci s objekty, ktere nemaji zadnou fyziku.
+    /// Pouziva se napriklad u papiru
+    /// </summary>
     public class StaticInteractable : BaseInteractable
     {
         [Header("Static Interactable")]
@@ -18,7 +23,7 @@ namespace BachelorProject.Interactable
 
         public override void Use()
         {
-            Debug.Log($"Nelze použít {transform.root.name}");
+            Debug.Log($"Nelze pouzit {transform.root.name}");
         }
     }
 }

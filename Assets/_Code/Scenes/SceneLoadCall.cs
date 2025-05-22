@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace BachelorProject.Scenes
 {
+    /// <summary>
+    /// Slouzi k zavolani nacteni sceny z jineho objektu
+    /// </summary>
     public class SceneLoadCall : MonoBehaviour
     {
         public ObjectIdentifier gameSystems;

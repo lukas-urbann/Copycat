@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 namespace BachelorProject.Saving
 {
+    /// <summary>
+    /// Kontroluje zda je hra ulozena a jaka scena je ulozena.
+    /// Dokaze hru ulozit nebo jeji ulozeni smazat
+    /// </summary>
     public class SceneSaver : MonoBehaviour
     {
         private const string LEVEL_SAVE = "LastScene";
@@ -34,12 +38,12 @@ namespace BachelorProject.Saving
         {
             string sceneName = SceneManager.GetActiveScene().name;
             PlayerPrefs.SetString(LEVEL_SAVE, sceneName);
-            Debug.Log($"Postup uložen - {sceneName}");
+            Debug.Log($"Postup ulozen - {sceneName}");
         }
 
         public void DebugPrintScene()
         {
-            Debug.Log("Uložená scéna: " + GetLatestScene());
+            Debug.Log("Ulozena scena: " + GetLatestScene());
         } 
 
         private string GetLatestScene() => PlayerPrefs.HasKey(LEVEL_SAVE) ? PlayerPrefs.GetString(LEVEL_SAVE) : "NULL";
@@ -53,7 +57,7 @@ namespace BachelorProject.Saving
             
             if (!gameSystems.GetSourceComponent(out SceneLoader sc))
             {
-                Debug.LogError("Nelze najít scene loader v GameSystems");
+                Debug.LogError("Nelze najit scene loader v GameSystems");
                 return;
             }
             
@@ -63,7 +67,7 @@ namespace BachelorProject.Saving
             }
             else
             {
-                Debug.LogError($"Scéna {lastScene.Value} nebyla nalezena v buildu. Načítám hru od začátku.");
+                Debug.LogError($"Scena {lastScene.Value} nebyla nalezena v buildu. Nacitam hru od zacatku.");
                 sc.LoadSceneCall(nullContinueScene);
             }
         }

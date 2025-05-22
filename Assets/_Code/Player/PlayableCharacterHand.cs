@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace BachelorProject.Player
 {
+    /// <summary>
+    /// Hracova ruka, umoznuje drzet predmety a interagovat s nimi.
+    /// </summary>
     public class PlayableCharacterHand : MonoBehaviour
     {
         [SerializeField] private Vector3 heldItemOffset = Vector3.zero;

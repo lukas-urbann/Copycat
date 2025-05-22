@@ -7,6 +7,10 @@ using BachelorProject.Audio;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Objekt pro objekty, jenz se daji uchopit do ruky hrace.
+    /// Objekty lze vzit do ruky, pouzit je, ci je pustit.
+    /// </summary>
     public class GrabbableInteractable : BaseInteractable
     {
         [Header("Grabbable Interactable")]
@@ -44,6 +48,9 @@ namespace BachelorProject.Interactable
             _gamePaused = isPaused;
         }
 
+        /// <summary>
+        /// Akce pouziti predmetu v ruce
+        /// </summary>
         public override void Use()
         {
             if (_gamePaused) return;
@@ -51,12 +58,15 @@ namespace BachelorProject.Interactable
             useAudio.Play();
         }
 
+        /// <summary>
+        /// Interakce - sebrani predmetu ze zeme
+        /// </summary>
         public override void Interact()
         {
             if (_gamePaused) return;
             if (ObjectRegistry.GetObject(playerRoot) == null)
             {
-                Debug.LogWarning($"{transform.root.name}: Root hráče není v registry, nemůžu grabnout.");
+                Debug.LogWarning($"{transform.root.name}: Root hrace neni v registry, nemuzu grabnout.");
                 return;
             }
 
@@ -74,11 +84,15 @@ namespace BachelorProject.Interactable
             }
         }
 
+        /// <summary>
+        /// Premisteni objektu k ruce hrace
+        /// </summary>
+        /// <returns></returns>
         private IEnumerator LerpToHand()
         {
             if (!ObjectRegistry.GetObject(playerHandIdentifier, out var go)) yield break;
 
-            //Le� k ruce, dokud jsi daleko
+            //Let k ruce, dokud jsi daleko
             while (Vector3.Distance(transform.position, go.transform.position) > snapDistance.Value)
             {
                 transform.SetPositionAndRotation(
@@ -109,6 +123,9 @@ namespace BachelorProject.Interactable
             ObjectRegistry.GetObject(playerRoot).GetComponent<PlayableCharacterHand>().HoldItem(gameObject);
         }
 
+        /// <summary>
+        /// Pokud je predmet sebrany, pust ho
+        /// </summary>
         public void Drop()
         {
             if (_gamePaused) return;

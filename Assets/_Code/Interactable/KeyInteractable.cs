@@ -5,6 +5,11 @@ using UnityEngine;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Skript pro klice, klice mohou byt pouzity na dvere.
+    /// Dedi z GrabbableInteractable, aby se daly uchopit do ruky hrace.
+    /// Mohou byt "zkonzumovany" dvermi
+    /// </summary>
     public class KeyInteractable : GrabbableInteractable
     {
         [Header("Key Interactable")]

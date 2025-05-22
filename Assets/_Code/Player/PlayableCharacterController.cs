@@ -3,6 +3,11 @@ using UnityEngine.InputSystem;
 
 namespace BachelorProject.Player
 {
+    /// <summary>
+    /// Hlavni skript hrace.
+    /// Povoluje ovladani hrace, jeho animace, pohyb a skok.
+    /// Ma ruzne promenne pro nastaveni rychlosti pohybu, gravitace, skoku a otaceni kamery.
+    /// </summary>
     [RequireComponent(typeof(CharacterController))]
     [RequireComponent(typeof(PlayableCharacterInput))]
     public class PlayableCharacterController : MonoBehaviour
@@ -70,7 +75,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError("Hr�� nem� input!");
+                Debug.LogError("Hrac nemainput!");
             }
 
             if (TryGetComponent(out CharacterController controller))
@@ -79,7 +84,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError($"Hr�� nem� {typeof(CharacterController)}!");
+                Debug.LogError($"Hrac nema {typeof(CharacterController)}!");
             }
 
             GetControls();
@@ -96,7 +101,7 @@ namespace BachelorProject.Player
         {
             if (!playerInput)
             {
-                Debug.LogError("PlayerInput component is null. Cannot bind input actions.");
+                Debug.LogError("PlayerInput neexistuje, nelze bindovat akce.");
                 return;
             }
 
@@ -106,7 +111,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogWarning("Jump action is null. Jump functionality will not work.");
+                Debug.LogWarning("Jump action je null. Skok nebude fungovat.");
             }
         }
 

@@ -3,6 +3,9 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Základní skript pro akce, které se spouští při událostech Unity.
+    /// </summary>
     public class BaseScriptActions : MonoBehaviour
     {
         public UnityEvent m_OnAwake;

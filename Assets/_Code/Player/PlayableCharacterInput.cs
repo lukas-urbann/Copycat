@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 
 namespace BachelorProject.Player
 {
+    /// <summary>
+    /// Aktivuje ovladani schema pro hrace
+    /// </summary>
     public class PlayableCharacterInput : MonoBehaviour
     {
         private GameControls InputActions { get; set; }

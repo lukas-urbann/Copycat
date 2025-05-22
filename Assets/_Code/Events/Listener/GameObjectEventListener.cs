@@ -4,6 +4,6 @@ namespace BachelorProject.Events.Listener
 {
     public class GameObjectEventListener : ParameterEventListener<GameObject>
     {
-        //Vše
+        //Vse, vice neni potreba. - Dulezite vlastnosti jsou zdedeny a typ je bezpecne urcen
     }
 }

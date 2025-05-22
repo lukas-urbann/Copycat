@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace BachelorProject.Management
 {
+    /// <summary>
+    /// Identifikator objektu, ktery se zaregistruje do databaze objektu.
+    /// Velmi usnadnuje praci s predmety. Velmi uzitecne pro ziskavani referenci na predmety. (Za pomoci ObjectRegistry)
+    /// </summary>
     [Serializable]
     public class IdentifiableObject : MonoBehaviour
     {

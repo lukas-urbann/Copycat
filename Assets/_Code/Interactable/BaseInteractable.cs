@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Zaklad vsech interaktovatelnych objektu.
+    /// Ma zakladni tridy pro zobrazeni interakce a pro zmenu materialu.
+    /// Interact je hlavni trida pri kliknuti a Use je alternativni metoda pro pouziti predmetu
+    /// </summary>
     public abstract class BaseInteractable : MonoBehaviour, IInteractable
     {
         private Material _originalMaterial;

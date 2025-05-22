@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Náhodná rotace objektů a jejich měřítka, používáno pro generování různých variant objektů.
+    /// </summary>
     public class RandomRotationScale : MonoBehaviour
     {
         public Vector3 minRotation = new Vector3(0, 0, 0);

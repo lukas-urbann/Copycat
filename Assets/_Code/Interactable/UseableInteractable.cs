@@ -4,6 +4,11 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Zaklad pro pouzitelne interaktovatelne objekty.
+    /// Spousti eventy. UnityEventy lze volat z dedicich skriptu a void eventy pro interakci s ostatnimi objekty na scene.
+    /// Dedi z nej vetsina interaktovatelnych objektu na scene.
+    /// </summary>
     public class UseableInteractable : BaseInteractable
     {
         [Header("Useable Interactable")]

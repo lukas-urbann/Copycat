@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 namespace BachelorProject.Player
 {
+    /// <summary>
+    /// Sleduje input pro UI
+    /// Stara se o to, aby se spravne hra pauzovala a kurzor se nezasekl
+    /// </summary>
     public class UIInput : MonoBehaviour
     {
         private GameControls InputActions { get; set; }

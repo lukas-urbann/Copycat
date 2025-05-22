@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace BachelorProject.Events
 {
+    /// <summary>
+    /// Základ pro herní event listenery
+    /// </summary>
     public abstract class GameEventListener : MonoBehaviour
     {
         public GameEvent gameEvent;

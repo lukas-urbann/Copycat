@@ -5,6 +5,11 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Zakladni skript pro packy.
+    /// Packy mohou byt ve stavu True/False. Pro lepsi dostupnost
+    /// vyuzivaji BoolEventu.
+    /// </summary>
     public class LeverInteractable : UseableInteractable
     {
         [Header("Lever Interactable")] [SerializeField]
@@ -28,7 +33,7 @@ namespace BachelorProject.Interactable
             {
                 if (!TryGetComponent(out leverAnimator))
                 {
-                    Debug.LogError("Páka nemá animator");
+                    Debug.LogError("Paka nema animator");
                 }
             }
 
@@ -39,6 +44,9 @@ namespace BachelorProject.Interactable
                 leverValue.Variable.Value = toggledOn;
         }
 
+        /// <summary>
+        /// Pri interakci s packou se zavola metoda ToggleLever.
+        /// </summary>
         private void ToggleLever()
         {
             Use();
@@ -47,6 +55,9 @@ namespace BachelorProject.Interactable
                 leverToggledEvent?.Execute();
         }
 
+        /// <summary>
+        /// Zmeni vizualni stav packy a aktualizuje stav
+        /// </summary>
         public void ToggleLeverState()
         {
             if (switchAudio != null)

@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 namespace BachelorProject.Scenes
 {
+    /// <summary>
+    /// Nacita sceny, kontroluje zda je hrac v menu nebo ve hre.
+    /// Zapina a vypina loading screen.
+    /// </summary>
     public class SceneLoader : MonoBehaviour
     {
         public ObjectIdentifier loadingSceneIdentifier;

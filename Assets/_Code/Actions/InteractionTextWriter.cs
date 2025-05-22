@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Pise text, ktery se zobrazi pri interakci s objektem.
+    /// </summary>
     public class InteractionTextWriter : MonoBehaviour
     {
         public List<StringReference> textToWrite = new();
@@ -15,7 +18,6 @@ namespace BachelorProject.Actions
             if (interactionLabel == null)
             {
                 Debug.LogWarning($"{transform.root.name} nem� Interaction Label");
-                return;
             }
         }
 
@@ -31,12 +33,12 @@ namespace BachelorProject.Actions
                     }
                     else
                     {
-                        Debug.LogWarning($"{transform.root.name} - ��dn� text k dispozici");
+                        Debug.LogWarning($"{transform.root.name} - Zadny text k dispozici");
                     }
                 }
                 else
                 {
-                    Debug.LogWarning($"{transform.root.name} - Interaction Label nem� InteractionText");
+                    Debug.LogWarning($"{transform.root.name} - Interaction Label nema InteractionText");
                 }
             }
             else

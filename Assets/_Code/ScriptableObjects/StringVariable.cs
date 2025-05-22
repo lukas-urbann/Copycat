@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Nese string hodnotu
+/// </summary>
 [CreateAssetMenu]
 public class StringVariable : ScriptableObject
 {

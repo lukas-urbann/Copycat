@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace BachelorProject.Objectives
 {
+    /// <summary>
+    /// Sleduje stavy pacek v levelu Offices
+    /// </summary>
     public class OfficeObjective : LevelObjective
     {
         public List<BoolReference> leverValues = new();

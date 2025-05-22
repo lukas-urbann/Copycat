@@ -3,13 +3,16 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Events
 {
+    /// <summary>
+    /// Listner pro generic eventy
+    /// </summary>
     public abstract class ParameterEventListener<T> : GameEventListener
     {
         public UnityEvent<T> response;
 
         public override void OnEventExecuted()
         {
-            Debug.LogError($"{GetType()} vyžaduje argumenty!");
+            Debug.LogError($"{GetType()} vyzaduje argumenty!");
         }
         
         public override void OnEventExecuted(object parameter)
@@ -20,7 +23,7 @@ namespace BachelorProject.Events
             }
             else
             {
-                Debug.LogError($"{GetType()} obdržel parametr typu {parameter?.GetType()}, ale očekával {typeof(T)}");
+                Debug.LogError($"{GetType()} obdrzel parametr typu {parameter?.GetType()}, ale ocekaval {typeof(T)}");
             }
         }
     }

@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// Reference na float hodnotu
+/// </summary>
 [Serializable]
 public class FloatReference
 {

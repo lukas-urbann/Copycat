@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Interactable
 {
+    /// <summary>
+    /// Skript pro dvere, dvere mohou byt zamcene a vyzadovat klic.
+    /// </summary>
     public class DoorInteractable : UseableInteractable
     {
         [Header("Door Interactable")]
@@ -42,6 +45,10 @@ namespace BachelorProject.Interactable
                 doorAnimator.SetBool("isOpen", isOpen);
         }
 
+        /// <summary>
+        /// Zkousi zda se dvere mohou otevrit, pokud jsou zamcene.
+        /// Pokud ma hrac klic, dvere se odemknou
+        /// </summary>
         private void TryToggleOpen()
         {
             InteractionText interactionText = null;
@@ -78,6 +85,9 @@ namespace BachelorProject.Interactable
             ToggleOpen();
         }
 
+        /// <summary>
+        /// Otevira dvere
+        /// </summary>
         public void ToggleOpen()
         {
             Use();
@@ -85,12 +95,18 @@ namespace BachelorProject.Interactable
             onDoorOpenEvent?.Invoke(isOpen);
         }
 
+        /// <summary>
+        /// Zmeni stav dveri
+        /// </summary>
         public void ToggleDoorState()
         {
             if (doorAnimator)
                 doorAnimator.SetBool("isOpen", isOpen = !isOpen);
         }
 
+        /// <summary>
+        /// Nastavi stav dveri
+        /// </summary>
         public void ToggleDoorState(bool val)
         {
             if (doorAnimator)

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using BachelorProject.Events;
 using UnityEngine;
@@ -6,6 +5,9 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Časovaná akce, která spouští eventy po uplynutí timeru.
+    /// </summary>
     public class TimedAction : MonoBehaviour
     {
         [Header("Timed Action")]

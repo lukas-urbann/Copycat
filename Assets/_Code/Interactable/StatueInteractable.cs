@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 namespace BachelorProject.Interactable
 {
+    //id smeru
     public enum RotationDirection
     {
         North = 0,
@@ -13,6 +14,11 @@ namespace BachelorProject.Interactable
         West = 3
     }
 
+    /// <summary>
+    /// Pouziva se pro sochy v levelu Outside.
+    /// Dava moznost otocit sochu o 90 stupnu a zkontrolovat zda je otoceni spravne.
+    /// Interakce se zaklada na tride UsableInteractable.
+    /// </summary>
     public class StatueInteractable : UseableInteractable
     {
         [SerializeField] private float rotationSpeed = 10;
@@ -44,7 +50,8 @@ namespace BachelorProject.Interactable
             UnityEventOnInteract = new UnityEvent();
             UnityEventOnInteract.AddListener(RotateStatue);
         }
-
+        
+        //Otaci sochou
         private void Update()
         {
             if (isRotating)
@@ -59,12 +66,14 @@ namespace BachelorProject.Interactable
             }
         }
 
+        //Vola event kde kontroluje zda je socha otocena spravne
         private void SetActualRotation()
         {
             actualRotation = (RotationDirection)currentFacingIndex;
             onRotateStatue?.Execute(actualRotation == correctRotation);
         }
 
+        //Zavola se pri interakci s sochou
         private void RotateStatue()
         {
             currentFacingIndex = (currentFacingIndex + 1) % 4;

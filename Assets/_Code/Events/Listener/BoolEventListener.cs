@@ -2,6 +2,6 @@ namespace BachelorProject.Events.Listener
 {
     public class BoolEventListener : ParameterEventListener<bool>
     {
-        //Vše
+        //Vse, vice neni potreba. - Dulezite vlastnosti jsou zdedeny a typ je bezpecne urcen
     }
 }

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace BachelorProject.UI
 {
+    /// <summary>
+    /// Prepisuje hlavni interakcni text v UI
+    /// </summary>
     public class InteractionText : MonoBehaviour
     {
         [SerializeField] private TMP_Text interactionText;

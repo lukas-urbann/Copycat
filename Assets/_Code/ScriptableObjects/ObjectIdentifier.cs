@@ -1,6 +1,12 @@
 using BachelorProject.Management;
 using UnityEngine;
 
+/// <summary>
+/// Reference na GameObject, pro vyuziti s ObjectRegistry
+/// Odkazem na tento objekt dokaze ziskat GameObject, ktery je ulozen v ObjectRegistry
+/// VELMI uzitecne pro praci s hernimy objekty na scene.
+/// Lze ziskat cely objekt nebo jeho komponenty.
+/// </summary>
 [CreateAssetMenu]
 public class ObjectIdentifier : ScriptableObject
 {

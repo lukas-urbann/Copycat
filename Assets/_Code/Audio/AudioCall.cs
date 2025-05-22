@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace BachelorProject.Audio
 {
+    /// <summary>
+    /// Třídá pro přehrávání zvuku. Zapisuje se do ostatních skriptů
+    /// </summary>
     [Serializable]
     public class AudioCall
     {

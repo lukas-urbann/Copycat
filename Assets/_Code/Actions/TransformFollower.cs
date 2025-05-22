@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace BachelorProject.Actions
 {
+    /// <summary>
+    /// Následuje zvolený follow, který je určený pomocí ObjectIdentifier.
+    /// Velmi užitečné pro sledování např. hráče
+    /// </summary>
     public class TransformFollower : MonoBehaviour
     {
         public ObjectIdentifier targetIdentifier;
@@ -21,7 +25,7 @@ namespace BachelorProject.Actions
 
                 if (!cachedTargetObject)
                 {
-                    Debug.LogWarning($"{GetType().Name} nemá follow target!");
+                    Debug.LogWarning($"{GetType().Name} nema follow target!");
                     return;
                 }
             }

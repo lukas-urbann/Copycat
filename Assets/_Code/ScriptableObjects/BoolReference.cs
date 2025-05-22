@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// Reference na bool hodnotu
+/// </summary>
 [Serializable]
 public class BoolReference
 {

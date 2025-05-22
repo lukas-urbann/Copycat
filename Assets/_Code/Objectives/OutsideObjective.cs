@@ -1,8 +1,11 @@
 using UnityEngine;
 
-
 namespace BachelorProject.Objectives
 {
+    /// <summary>
+    /// Sleduje spravne natoceni soch v levelu Outside
+    /// Hodnoty se nastavuji pomoc BoolEventu
+    /// </summary>
     public class OutsideObjective : LevelObjective
     {
         [SerializeField] private bool casperRequirement = false;

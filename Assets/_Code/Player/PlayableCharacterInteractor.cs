@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 namespace BachelorProject.Player
 {
+    /// <summary>
+    /// Hlavni interaktor pro hrace
+    /// Pomoci raycastu scannuje pro interaktovatelne objekty
+    /// </summary>
     [RequireComponent(typeof(PlayableCharacterInput))]
     public class PlayableCharacterInteractor : MonoBehaviour
     {
@@ -11,7 +15,7 @@ namespace BachelorProject.Player
         
         [SerializeField] private FloatReference interactionDistance;
         [Tooltip("Která maska se považuje za interaktovatelnou")]
-        [SerializeField] private LayerMask interactableLayer = ~0; // Výchozí na 0, aby bylo zahrnuto vše
+        [SerializeField] private LayerMask interactableLayer = ~0; // Vychozi na 0, aby bylo zahrnuto vse
         [SerializeField] private ObjectIdentifier interactionPrompt;
         [SerializeField] private Camera interactionCamera;
 
@@ -21,7 +25,7 @@ namespace BachelorProject.Player
         public VoidEvent SeeInteractable;
         public VoidEvent UnseeInteractable;
 
-        #region Priv�tn� prom�nn�
+        #region Privatni promenne
 
         private IInteractable currentInteractable;
         private bool interactableInReach = false;
@@ -37,7 +41,7 @@ namespace BachelorProject.Player
             }
             else
             {
-                Debug.LogError($"{typeof(PlayableCharacterInteractor)} nem� input!");
+                Debug.LogError($"{typeof(PlayableCharacterInteractor)} nema input!");
             }
 
             AssignActions();
@@ -62,14 +66,14 @@ namespace BachelorProject.Player
             {
                 if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
                 {
-                    if (currentInteractable != interactable) // Pokud hr�� vid� jin� interaktovateln� objekt
+                    if (currentInteractable != interactable) // Pokud hrac vidi jiny interaktovatelny objekt
                     {
-                        currentInteractable?.OnUnsee(); // Pokud hr�� p�ejel na nov� objekt, tak odvolat ten star�
-                        if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme m�li p�edt�m n�jak� interactable
+                        currentInteractable?.OnUnsee(); // Pokud hrac prejel na novy, tak odhlasit stary
+                        if (interactableInReach) UnseeInteractable.Execute(); // Pokud jsme meli predtim nejaky interactable
 
                         if (interactable.IsInteractable)
                         {
-                            currentInteractable = interactable; // P�esunut� na nov� interactable
+                            currentInteractable = interactable; // Presunuti na novy
                             currentInteractable?.OnSee();
                             interactableInReach = true;
                             interactionPrompt.GetSourceObject()?.SetActive(true);
@@ -80,7 +84,7 @@ namespace BachelorProject.Player
                 }
             }
 
-            if (interactableInReach) // Pokud jsme se od interaktovateln�ho objektu vzd�lili
+            if (interactableInReach) // Pri vzdaleni od stareho interactablu
             {
                 currentInteractable?.OnUnsee();
                 currentInteractable = null;

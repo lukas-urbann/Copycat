@@ -3,6 +3,11 @@ using UnityEngine;
 
 namespace BachelorProject.Management
 {
+    /// <summary>
+    /// Databaze vsech predmetu na scene, jenz se do nej pomoci ObjectIdentifier zaregistruji.
+    /// Extremne usnadnuje praci s predmety. Velmi uzitecne pro ziskavani referenci na predmety.
+    /// Prevazne eliminuje potrebu singletonu a pevnych referenci.
+    /// </summary>
     public static class ObjectRegistry
     {
         private static Dictionary<ObjectIdentifier, GameObject> _registry = new();

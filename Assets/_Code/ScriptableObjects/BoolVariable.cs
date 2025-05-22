@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Nese bool hodnotu
+/// </summary>
 [CreateAssetMenu]
 public class BoolVariable : ScriptableObject
 {
