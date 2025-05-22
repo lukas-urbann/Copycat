@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreditsScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 7130756185945169757, guid: 0b8a980b6456f4d4b877ff9fd22be5cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7343562032878646559, guid: 0b8a980b6456f4d4b877ff9fd22be5cf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 241.86061
